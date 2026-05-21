@@ -1,0 +1,700 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Livraison locale rapide · Sherbrooke"
+  description="Service de livraison locale à Sherbrooke : restaurants, dépanneur, petits colis, articles essentiels, commandes rapides. Tarif 8 $ pour 2 km + 1 $/km. Rayon 0–9 km, 7 jours sur 7. 873 200-7377."
+  bodyClass="page-home"
+>
+  <!-- ========== ROUTE BANNER ========== -->
+  <section class="route-banner" aria-label="Service de livraison en cours">
+    <div class="route-banner__wrap">
+      <svg class="route-banner__svg" viewBox="0 0 1600 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Voiture de livraison Express Livraison en route vers le client à Sherbrooke">
+        <defs>
+          <linearGradient id="rb-sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0B1B3F"/>
+            <stop offset="60%" stop-color="#0A47C2"/>
+            <stop offset="100%" stop-color="#2358D6"/>
+          </linearGradient>
+          <pattern id="rb-grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+          </pattern>
+          <radialGradient id="rb-glow" cx="0.5" cy="0.8" r="0.8">
+            <stop offset="0%" stop-color="#4C75DA" stop-opacity="0.5"/>
+            <stop offset="60%" stop-color="#4C75DA" stop-opacity="0.05"/>
+            <stop offset="100%" stop-color="#4C75DA" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="rb-shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+            <feOffset dy="6"/>
+            <feComponentTransfer><feFuncA type="linear" slope="0.35"/></feComponentTransfer>
+            <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <rect width="1600" height="280" fill="url(#rb-sky)"/>
+        <rect width="1600" height="280" fill="url(#rb-grid)"/>
+        <ellipse cx="800" cy="280" rx="900" ry="240" fill="url(#rb-glow)"/>
+
+        <path d="M0 200 L 180 150 L 320 175 L 460 130 L 620 165 L 780 110 L 940 155 L 1100 125 L 1280 170 L 1440 135 L 1600 165 L 1600 280 L 0 280 Z" fill="rgba(0,0,0,.18)"/>
+
+        <g fill="rgba(0,0,0,.28)">
+          <rect x="60" y="170" width="32" height="50"/>
+          <rect x="100" y="155" width="22" height="65"/>
+          <rect x="128" y="180" width="26" height="40"/>
+          <rect x="160" y="145" width="28" height="75"/>
+          <rect x="194" y="165" width="20" height="55"/>
+          <rect x="220" y="175" width="34" height="45"/>
+          <rect x="260" y="160" width="22" height="60"/>
+
+          <rect x="1350" y="165" width="28" height="55"/>
+          <rect x="1384" y="150" width="22" height="70"/>
+          <rect x="1412" y="170" width="26" height="50"/>
+          <rect x="1444" y="155" width="20" height="65"/>
+          <rect x="1470" y="178" width="30" height="42"/>
+          <rect x="1506" y="160" width="22" height="60"/>
+          <rect x="1534" y="172" width="28" height="48"/>
+        </g>
+        <g fill="rgba(212,228,255,.18)">
+          <rect x="66" y="180" width="3" height="3"/><rect x="74" y="180" width="3" height="3"/><rect x="82" y="180" width="3" height="3"/>
+          <rect x="66" y="190" width="3" height="3"/><rect x="74" y="190" width="3" height="3"/><rect x="82" y="190" width="3" height="3"/>
+          <rect x="104" y="165" width="3" height="3"/><rect x="112" y="165" width="3" height="3"/><rect x="104" y="175" width="3" height="3"/><rect x="112" y="175" width="3" height="3"/>
+          <rect x="164" y="155" width="3" height="3"/><rect x="172" y="155" width="3" height="3"/><rect x="180" y="155" width="3" height="3"/>
+          <rect x="164" y="165" width="3" height="3"/><rect x="172" y="165" width="3" height="3"/><rect x="180" y="165" width="3" height="3"/>
+          <rect x="1390" y="160" width="3" height="3"/><rect x="1398" y="160" width="3" height="3"/>
+          <rect x="1390" y="170" width="3" height="3"/><rect x="1398" y="170" width="3" height="3"/>
+          <rect x="1450" y="165" width="3" height="3"/><rect x="1458" y="165" width="3" height="3"/>
+        </g>
+
+        <rect x="0" y="220" width="1600" height="40" fill="#0E1A38"/>
+        <line x1="0" y1="240" x2="1600" y2="240" stroke="#4C75DA" stroke-width="2" stroke-dasharray="24 16" opacity=".7"/>
+        <line x1="0" y1="220" x2="1600" y2="220" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+
+        <g transform="translate(120 130)" filter="url(#rb-shadow)">
+          <rect x="0" y="0" width="100" height="90" rx="4" fill="#1A2C5E" stroke="#4C75DA" stroke-width="1"/>
+          <rect x="0" y="0" width="100" height="22" fill="#0A47C2"/>
+          <text x="50" y="15" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="10" font-weight="600" fill="#fff" letter-spacing="1.5">DÉPANNEUR</text>
+          <rect x="12" y="32" width="22" height="28" fill="#4C75DA" opacity=".4"/>
+          <rect x="40" y="32" width="22" height="28" fill="#4C75DA" opacity=".4"/>
+          <rect x="68" y="32" width="22" height="28" fill="#4C75DA" opacity=".4"/>
+          <rect x="40" y="64" width="22" height="26" fill="#0E1A38"/>
+          <circle cx="51" cy="78" r="1.5" fill="#FFD54A"/>
+          <line x1="0" y1="90" x2="100" y2="90" stroke="#0A1430" stroke-width="2"/>
+        </g>
+        <g transform="translate(170 110)">
+          <circle r="14" fill="#fff"/>
+          <circle r="14" fill="none" stroke="#0A47C2" stroke-width="2"/>
+          <text y="4" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#0A47C2" letter-spacing="0.4">A</text>
+          <circle r="22" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1">
+            <animate attributeName="r" values="14;28;14" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.6;0;0.6" dur="3s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+
+        <g transform="translate(1380 120)" filter="url(#rb-shadow)">
+          <path d="M0 36 L 50 0 L 100 36 L 100 100 L 0 100 Z" fill="#1A2C5E" stroke="#4C75DA" stroke-width="1"/>
+          <rect x="36" y="56" width="28" height="44" fill="#0A47C2"/>
+          <rect x="44" y="64" width="12" height="20" fill="#FFD54A" opacity=".7"/>
+          <rect x="14" y="50" width="14" height="14" fill="#4C75DA" opacity=".5"/>
+          <rect x="72" y="50" width="14" height="14" fill="#4C75DA" opacity=".5"/>
+          <path d="M0 36 L 50 0 L 100 36" fill="none" stroke="#2358D6" stroke-width="2" stroke-linejoin="round"/>
+        </g>
+        <g transform="translate(1430 110)">
+          <circle r="14" fill="#0A47C2"/>
+          <circle r="14" fill="none" stroke="#fff" stroke-width="2"/>
+          <text y="4" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#fff" letter-spacing="0.4">B</text>
+        </g>
+
+        <path d="M 170 220 Q 380 200 540 220 T 1000 220 T 1430 220" stroke="rgba(255,255,255,.18)" stroke-width="3" fill="none"/>
+        <path id="rb-route" d="M 170 220 Q 380 200 540 220 T 1000 220 T 1430 220" stroke="#4AFFB8" stroke-width="2" fill="none" stroke-dasharray="6 8" opacity=".7">
+          <animate attributeName="stroke-dashoffset" from="0" to="-28" dur="1.2s" repeatCount="indefinite"/>
+        </path>
+
+        <g id="rb-van" filter="url(#rb-shadow)">
+          <animateMotion dur="14s" repeatCount="indefinite" rotate="0">
+            <mpath href="#rb-route-anim"/>
+          </animateMotion>
+          <g transform="translate(-58 -32)">
+            <ellipse cx="58" cy="34" rx="58" ry="4" fill="rgba(0,0,0,.4)"/>
+            <rect x="8" y="0" width="68" height="32" rx="2" fill="#fff"/>
+            <path d="M76 4 L 110 4 Q 116 4 116 10 L 116 32 L 76 32 Z" fill="#0A47C2"/>
+            <path d="M80 6 L 110 6 Q 114 6 114 10 L 114 18 L 80 18 Z" fill="#7BB4FF" opacity=".85"/>
+            <rect x="8" y="0" width="68" height="3" fill="#0A47C2"/>
+            <line x1="42" y1="4" x2="42" y2="30" stroke="#dde5f4" stroke-width="1"/>
+            <rect x="14" y="10" width="22" height="16" fill="#0A47C2"/>
+            <text x="25" y="22" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="#fff">EL</text>
+            <text x="50" y="14" font-family="Space Grotesk, sans-serif" font-size="6" font-weight="600" fill="#0A47C2" letter-spacing="0.4">EXPRESS</text>
+            <text x="50" y="22" font-family="Space Grotesk, sans-serif" font-size="6" font-weight="600" fill="#0A47C2" letter-spacing="0.4">LIVRAISON</text>
+            <text x="50" y="28" font-family="JetBrains Mono, monospace" font-size="4" fill="#0A47C2" opacity=".7">873 200-7377</text>
+            <circle cx="114" cy="24" r="2" fill="#FFD54A"/>
+            <circle cx="24" cy="34" r="6" fill="#0E1A38"/>
+            <circle cx="24" cy="34" r="2.5" fill="#4C75DA"/>
+            <circle cx="96" cy="34" r="6" fill="#0E1A38"/>
+            <circle cx="96" cy="34" r="2.5" fill="#4C75DA"/>
+          </g>
+        </g>
+        <path id="rb-route-anim" d="M 170 220 Q 380 200 540 220 T 1000 220 T 1430 220" fill="none" stroke="none"/>
+
+        <g font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="1">
+          <g transform="translate(380 100)">
+            <rect x="-58" y="-18" width="116" height="36" rx="18" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
+            <text y="-3" text-anchor="middle" fill="#8FAFFF" font-size="9">0–2 KM</text>
+            <text y="10" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="700">8 $</text>
+          </g>
+          <g transform="translate(680 90)">
+            <rect x="-66" y="-18" width="132" height="36" rx="18" fill="rgba(74,255,184,.18)" stroke="#4AFFB8" stroke-width="1"/>
+            <text y="-3" text-anchor="middle" fill="#4AFFB8" font-size="9">PAR KM SUPP.</text>
+            <text y="10" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="700">+ 1 $</text>
+          </g>
+          <g transform="translate(1000 100)">
+            <rect x="-62" y="-18" width="124" height="36" rx="18" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
+            <text y="-3" text-anchor="middle" fill="#8FAFFF" font-size="9">DÉLAI ESTIMÉ</text>
+            <text y="10" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="700">~ 25 MIN</text>
+          </g>
+          <g transform="translate(1260 90)">
+            <rect x="-66" y="-18" width="132" height="36" rx="18" fill="rgba(10,71,194,.55)" stroke="#7BB4FF" stroke-width="1"/>
+            <text y="-3" text-anchor="middle" fill="#C7D9FF" font-size="9">RAYON MAX.</text>
+            <text y="10" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="700">0–9 KM</text>
+          </g>
+        </g>
+
+        <g transform="translate(1540 36)">
+          <circle r="6" fill="#4AFFB8"/>
+          <circle r="6" fill="none" stroke="#4AFFB8" stroke-width="1">
+            <animate attributeName="r" values="6;14;6" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.9;0;0.9" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <text x="-14" y="4" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600" fill="#4AFFB8" letter-spacing="2">EN DIRECT</text>
+        </g>
+
+        <g transform="translate(60 36)" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2">
+          <text fill="#8FAFFF">SHERBROOKE · 7 J/7 · LUN–SAM 9–21 H · DIM 10–17 H</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <div class="hero__meta">
+          <span class="pill pill--live"><span class="dot"></span><span data-status>Ouvert · ferme à 21 h</span></span>
+          <span class="pill pill--blue">⌖&nbsp; Sherbrooke · Rayon 0–9 km</span>
+        </div>
+        <h1 class="h-display">
+          Tout ce qui vous manque,<br/>livré en <span class="hero__highlight">moins de 30 min.</span>
+        </h1>
+        <p class="lead">Restaurants, dépanneur, petits colis, articles essentiels. Express Livraison va le chercher et l'apporte chez vous. Un appel, un formulaire — tarif annoncé d'avance, paiement à la porte.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary btn--xl" href="tel:+18732007377">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Appeler · 873 200-7377
+          </a>
+          <a class="btn btn--xl" href="#commander">
+            Commander en ligne <span class="arr">↓</span>
+          </a>
+        </div>
+        <ul class="hero__metrics">
+          <li>
+            <div class="hero__metric-num"><span class="tabular">0–9</span><span class="hero__metric-unit">km</span></div>
+            <div class="hero__metric-lbl">Rayon d'action local</div>
+          </li>
+          <li>
+            <div class="hero__metric-num"><span class="tabular">7</span><span class="hero__metric-unit">J/7</span></div>
+            <div class="hero__metric-lbl">Service continu</div>
+          </li>
+          <li>
+            <div class="hero__metric-num"><span class="tabular">~25</span><span class="hero__metric-unit">min</span></div>
+            <div class="hero__metric-lbl">Délai porte-à-porte</div>
+          </li>
+        </ul>
+      </div>
+
+      <aside class="hero__panel" aria-label="Panneau de répartition">
+        <div class="hero__panel-head">
+          <span class="mono">DISPATCH · LIVE</span>
+          <span class="hero__panel-pulse" aria-hidden="true"><span></span></span>
+        </div>
+        <div class="hero__panel-status">
+          <div class="hero__panel-stat">
+            <div class="mono hero__panel-key">État du service</div>
+            <div class="hero__panel-val" data-status>Ouvert · ferme à 21 h</div>
+          </div>
+          <div class="hero__panel-grid">
+            <div>
+              <div class="mono hero__panel-key">Zone</div>
+              <div class="hero__panel-sub">Sherbrooke</div>
+            </div>
+            <div>
+              <div class="mono hero__panel-key">Délai moyen</div>
+              <div class="hero__panel-sub">~25 min</div>
+            </div>
+            <div>
+              <div class="mono hero__panel-key">Rayon</div>
+              <div class="hero__panel-sub">0–9 km</div>
+            </div>
+            <div>
+              <div class="mono hero__panel-key">Paiement</div>
+              <div class="hero__panel-sub">Square + Comptant</div>
+            </div>
+          </div>
+        </div>
+        <a class="hero__panel-cta" href="tel:+18732007377">
+          <div>
+            <div class="mono">Composer maintenant</div>
+            <div class="hero__panel-num">873 200·7377</div>
+          </div>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <div class="hero__panel-foot">
+          <span class="mono">Lun–Sam · 9 h–21 h</span>
+          <span class="mono">Dim · 10 h–17 h</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ========== TRUST STRIP ========== -->
+  <section class="trust no-divider" aria-label="Pourquoi nous">
+    <div class="container">
+      <div class="trust__grid">
+        <div class="trust__item">
+          <span class="trust__item-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+          <div>
+            <strong>8 $ + 1 $/km</strong>
+            <span>Formule unique, annoncée d'avance</span>
+          </div>
+        </div>
+        <div class="trust__item">
+          <span class="trust__item-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+          <div>
+            <strong>7 jours sur 7</strong>
+            <span>Service continu, jours fériés inclus</span>
+          </div>
+        </div>
+        <div class="trust__item">
+          <span class="trust__item-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div>
+            <strong>Local d'abord</strong>
+            <span>Équipe et dépanneurs d'ici</span>
+          </div>
+        </div>
+        <div class="trust__item">
+          <span class="trust__item-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20M6 14h4"/></svg></span>
+          <div>
+            <strong>Paiement à la porte</strong>
+            <span>Square (carte) ou comptant</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section>
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <div class="kicker">Nos services</div>
+          <h2 class="h1" style="margin-top:16px;">Quatre façons<br/>de vous dépanner.</h2>
+        </div>
+        <p class="lead section-head__lead">On ne se limite pas au dépanneur. Petit colis, essentiels, courses rapides — tout ce qui se livre dans un rayon de 9 km, on s'en occupe. <strong>Repas de restaurant sur demande</strong> (appelez-nous).</p>
+      </div>
+      <div class="services services--4">
+        <a href="/services#depanneur" class="service" data-reveal>
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h24l-1.5 14a2 2 0 0 1-2 1.8H7.5a2 2 0 0 1-2-1.8z"/><path d="M9 12V8a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4"/></svg>
+          </div>
+          <div class="service__num mono">01</div>
+          <h3 class="h3">Dépanneur</h3>
+          <p>Aliments, breuvages, articles de toilette, loterie, tabac. Cinq familles, centaines de produits.</p>
+          <span class="pill pill--age">Alcool · Tabac · Loterie 18 +</span>
+          <span class="service__more">Voir détails <span class="arr">→</span></span>
+        </a>
+        <a href="/services#colis" class="service" data-reveal>
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4l12 6v12l-12 6L4 22V10z"/><path d="M4 10l12 6 12-6M16 16v12"/></svg>
+          </div>
+          <div class="service__num mono">02</div>
+          <h3 class="h3">Petits colis</h3>
+          <p>Livraison point A à point B. Documents, clés, oublis, courses entre voisins. Discret et rapide.</p>
+          <span class="service__more">Voir détails <span class="arr">→</span></span>
+        </a>
+        <a href="/services#essentiels" class="service" data-reveal>
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h8v6h6v8h-6v6h-8v-6H6v-8h6z"/></svg>
+          </div>
+          <div class="service__num mono">03</div>
+          <h3 class="h3">Articles essentiels</h3>
+          <p>Pharmacie, hygiène, produits ménagers, articles pour bébé. Quand sortir n'est pas une option.</p>
+          <span class="service__more">Voir détails <span class="arr">→</span></span>
+        </a>
+        <a href="/services#rapide" class="service" data-reveal>
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l-6 14h8l-2 10 10-16h-8z"/></svg>
+          </div>
+          <div class="service__num mono">04</div>
+          <h3 class="h3">Commandes rapides</h3>
+          <p>Tout ce qui n'entre pas dans les autres cases — incluant <strong>repas de restaurant sur demande</strong>. Une seule règle : ça doit être dans le rayon de 9 km.</p>
+          <span class="service__more">Voir détails <span class="arr">→</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TARIFICATION ========== -->
+  <section>
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <div class="kicker">Tarification</div>
+          <h2 class="h1" style="margin-top:16px;">Une seule formule.<br/>Calculée à la distance.</h2>
+        </div>
+        <p class="lead section-head__lead">Pas de zones, pas de paliers compliqués. <strong>8 $ pour 2 km</strong>, puis <strong>+1 $ par kilomètre supplémentaire</strong>. C'est tout. Articles facturés au prix du dépanneur, sans majoration.</p>
+      </div>
+
+      <div class="formula" data-reveal>
+        <div class="formula__part">
+          <span class="formula__lbl mono">Base</span>
+          <div class="formula__row">
+            <div class="formula__val"><span>$</span>8</div>
+            <div class="formula__txt">
+              <strong>Pour 2 km</strong>
+              <span>Forfait de départ minimum</span>
+            </div>
+          </div>
+        </div>
+        <div class="formula__op" aria-hidden="true">+</div>
+        <div class="formula__part">
+          <span class="formula__lbl mono">Distance</span>
+          <div class="formula__row">
+            <div class="formula__val"><span>$</span>1<span class="formula__unit">/km</span></div>
+            <div class="formula__txt">
+              <strong>Par km supplémentaire</strong>
+              <span>Au-delà du forfait de base</span>
+            </div>
+          </div>
+        </div>
+        <div class="formula__op" aria-hidden="true">=</div>
+        <div class="formula__part formula__part--total">
+          <span class="formula__lbl mono">Maximum</span>
+          <div class="formula__row">
+            <div class="formula__val"><span>$</span>15</div>
+            <div class="formula__txt">
+              <strong>À 9 km (limite)</strong>
+              <span>Rayon maximum desservi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="examples" data-reveal>
+        <div class="examples__head">
+          <span class="mono">Exemples · livraison seule</span>
+          <span class="mono">(prix des articles en sus)</span>
+        </div>
+        <div class="examples__grid">
+          <div class="example">
+            <div class="example__km mono">2 km</div>
+            <div class="example__price"><span>$</span>8</div>
+            <div class="example__zone">Centre-ville</div>
+          </div>
+          <div class="example">
+            <div class="example__km mono">4 km</div>
+            <div class="example__price"><span>$</span>10</div>
+            <div class="example__zone">Fleurimont</div>
+          </div>
+          <div class="example example--feat">
+            <div class="example__km mono">6 km</div>
+            <div class="example__price"><span>$</span>12</div>
+            <div class="example__zone">Le plus demandé</div>
+          </div>
+          <div class="example">
+            <div class="example__km mono">8 km</div>
+            <div class="example__price"><span>$</span>14</div>
+            <div class="example__zone">Rock Forest</div>
+          </div>
+          <div class="example">
+            <div class="example__km mono">9 km</div>
+            <div class="example__price"><span>$</span>15</div>
+            <div class="example__zone">Saint-Élie</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="tarif__foot mono">* Distance calculée depuis le dépanneur. Taxes applicables sur les articles. Hors 9 km : appelez, on évalue.</p>
+    </div>
+  </section>
+
+  <!-- ========== ZONE 0-9 KM ========== -->
+  <section style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="zone-grid" data-reveal>
+        <div>
+          <div class="kicker">Zone desservie</div>
+          <h2 class="h1" style="margin-top:16px;">Rayon de <span class="zone-num">0 à 9 km</span><br/>autour de Sherbrooke.</h2>
+          <p class="lead" style="margin-top: 24px;">Quatre arrondissements couverts. Hors zone : appelez, on évalue au cas par cas.</p>
+          <ul class="zone-list">
+            <li><span class="zone-list__dot" style="background:var(--blue-600)"></span> Sherbrooke <span class="mono muted">2 km · 8 $</span></li>
+            <li><span class="zone-list__dot" style="background:var(--blue-500)"></span> Fleurimont <span class="mono muted">~5 km · 11 $</span></li>
+            <li><span class="zone-list__dot" style="background:var(--blue-700)"></span> Rock Forest <span class="mono muted">~7 km · 13 $</span></li>
+            <li><span class="zone-list__dot" style="background:var(--ink)"></span> Saint-Élie-d'Orford <span class="mono muted">~8 km · 14 $</span></li>
+          </ul>
+          <div style="margin-top:32px;">
+            <a class="btn btn--dark btn--lg" href="tel:+18732007377">Confirmer ma zone <span class="arr">→</span></a>
+          </div>
+        </div>
+        <figure class="zone-map" aria-label="Carte du rayon de livraison">
+          <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" role="img">
+            <defs>
+              <pattern id="grid" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+                <path d="M30 0H0V30" fill="none" stroke="var(--line)" stroke-width="1"/>
+              </pattern>
+              <radialGradient id="zone-grad" cx="300" cy="250" r="220" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="var(--blue-600)" stop-opacity="0.18"/>
+                <stop offset="50%" stop-color="var(--blue-600)" stop-opacity="0.08"/>
+                <stop offset="100%" stop-color="var(--blue-600)" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="600" height="500" fill="var(--surface)"/>
+            <rect width="600" height="500" fill="url(#grid)"/>
+
+            <path d="M0 320 C 120 280, 220 360, 340 310 S 540 270, 600 290"
+                  stroke="var(--blue-300)" stroke-width="16" fill="none" opacity=".35" stroke-linecap="round"/>
+            <path d="M0 320 C 120 280, 220 360, 340 310 S 540 270, 600 290"
+                  stroke="var(--blue-600)" stroke-width="1.5" fill="none" opacity=".6"/>
+            <text x="490" y="280" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--muted)" letter-spacing="2">RIV. MAGOG</text>
+
+            <circle cx="300" cy="250" r="220" fill="url(#zone-grad)"/>
+            <circle cx="300" cy="250" r="220" fill="none" stroke="var(--blue-600)" stroke-width="1" stroke-dasharray="4 4" opacity=".4"/>
+            <circle cx="300" cy="250" r="150" fill="none" stroke="var(--blue-600)" stroke-width="1" stroke-dasharray="4 4" opacity=".3"/>
+            <circle cx="300" cy="250" r="80" fill="none" stroke="var(--blue-600)" stroke-width="1" stroke-dasharray="4 4" opacity=".3"/>
+
+            <g font-family="JetBrains Mono, monospace" font-size="10" fill="var(--muted)" letter-spacing="1">
+              <text x="305" y="170" >3 KM</text>
+              <text x="305" y="100">6 KM</text>
+              <text x="305" y="30">9 KM</text>
+            </g>
+
+            <g font-family="Space Grotesk, sans-serif" font-weight="600">
+              <circle cx="300" cy="250" r="14" fill="var(--blue-600)" stroke="#fff" stroke-width="3"/>
+              <circle cx="300" cy="250" r="40" fill="none" stroke="var(--blue-600)" stroke-width="1.5" opacity=".4">
+                <animate attributeName="r" values="14;60;14" dur="3.4s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.7;0;0.7" dur="3.4s" repeatCount="indefinite"/>
+              </circle>
+              <text x="320" y="245" font-size="18" fill="var(--ink)">Sherbrooke</text>
+              <text x="320" y="262" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--muted)" letter-spacing="1">CENTRE · 0 KM</text>
+
+              <circle cx="430" cy="170" r="10" fill="var(--blue-500)" stroke="#fff" stroke-width="2.5"/>
+              <text x="448" y="167" font-size="15" fill="var(--ink)">Fleurimont</text>
+              <text x="448" y="182" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--muted)" letter-spacing="1">~5 KM</text>
+
+              <circle cx="180" cy="340" r="10" fill="var(--blue-700)" stroke="#fff" stroke-width="2.5"/>
+              <text x="60" y="337" font-size="15" fill="var(--ink)">Rock Forest</text>
+              <text x="60" y="352" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--muted)" letter-spacing="1">~7 KM</text>
+
+              <circle cx="110" cy="200" r="10" fill="var(--ink)" stroke="#fff" stroke-width="2.5"/>
+              <text x="20" y="190" font-size="15" fill="var(--ink)">Saint-Élie</text>
+              <text x="20" y="205" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--muted)" letter-spacing="1">~8 KM</text>
+            </g>
+
+            <g transform="translate(550 60)">
+              <circle r="22" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1"/>
+              <path d="M0 -16 L 5 0 L 0 16 L -5 0 Z" fill="var(--primary)" stroke="var(--ink)" stroke-width="1"/>
+              <text x="0" y="-26" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="600" fill="var(--ink)">N</text>
+            </g>
+            <g transform="translate(40 460)">
+              <rect width="48" height="4" fill="var(--ink)"/>
+              <rect x="48" width="48" height="4" fill="var(--surface)" stroke="var(--ink)" stroke-width="1"/>
+              <text x="0" y="-6" font-family="JetBrains Mono" font-size="10" fill="var(--muted)">0</text>
+              <text x="84" y="-6" font-family="JetBrains Mono" font-size="10" fill="var(--muted)">3 KM</text>
+            </g>
+          </svg>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMMANDER (form) ========== -->
+  <section id="commander">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <div class="kicker">Commande en ligne</div>
+          <h2 class="h1" style="margin-top:16px;">Listez vos articles.<br/>On vous rappelle pour confirmer.</h2>
+        </div>
+        <p class="lead section-head__lead">Plus rapide qu'un appel pour les longues listes. On vous rappelle au numéro fourni pour confirmer le total et l'heure d'arrivée.</p>
+      </div>
+
+      <div class="order-grid" data-reveal>
+        <form class="order-form" data-form="order" novalidate>
+          <div class="order-form__row">
+            <div class="field">
+              <label for="f-name">Nom complet <span class="req">*</span></label>
+              <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="ex. Marie Tremblay" />
+              <div class="field__error mono"></div>
+            </div>
+            <div class="field">
+              <label for="f-phone">Téléphone mobile <span class="req">*</span></label>
+              <input id="f-phone" name="phone" type="tel" required data-phone autocomplete="tel" inputmode="tel" placeholder="(873) 200-7377" />
+              <div class="field__hint">Format canadien à 10 chiffres</div>
+              <div class="field__error mono"></div>
+            </div>
+          </div>
+
+          <div class="order-form__row order-form__row--addr">
+            <div class="field" style="flex:2">
+              <label for="f-addr">Adresse de livraison <span class="req">*</span></label>
+              <input id="f-addr" name="address" type="text" required autocomplete="street-address" placeholder="ex. 1234 rue King Ouest, app. 5" />
+              <div class="field__hint">Numéro civique, rue, appartement</div>
+              <div class="field__error mono"></div>
+            </div>
+            <div class="field" style="flex:1">
+              <label for="f-zone">Secteur <span class="req">*</span></label>
+              <select id="f-zone" name="zone" required>
+                <option value="">— choisir —</option>
+                <option>Sherbrooke / centre (~2 km · 8 $)</option>
+                <option>Fleurimont (~5 km · 11 $)</option>
+                <option>Rock Forest (~7 km · 13 $)</option>
+                <option>Saint-Élie-d'Orford (~8 km · 14 $)</option>
+                <option>Hors 9 km · à confirmer</option>
+              </select>
+              <div class="field__error mono"></div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-order">Liste d'articles <span class="req">*</span></label>
+            <textarea id="f-order" name="order" required rows="6" placeholder="ex.&#10;1 × Lait 2 % 2 L&#10;2 × Coke 591 ml&#10;1 × Chips Lay's BBQ&#10;1 × Paquet de cigarettes du Maurier King Size&#10;1 × Billet 6/49 (tirage du mercredi)"></textarea>
+            <div class="field__hint">Précisez marques, formats et quantités. Plus c'est précis, plus on est rapide.</div>
+            <div class="field__error mono"></div>
+          </div>
+
+          <div class="field">
+            <label for="f-notes">Notes (optionnel)</label>
+            <input id="f-notes" name="notes" type="text" placeholder="Code de porte, instructions de livraison, etc." />
+          </div>
+
+          <label class="checkbox">
+            <input type="checkbox" name="age_consent" />
+            <span>
+              <strong>Je confirme avoir 18 ans et plus</strong> pour tout achat d'alcool, de tabac ou de loterie.
+              Une pièce d'identité valide sera demandée à la livraison, sans exception.
+            </span>
+          </label>
+
+          <div class="order-form__submit">
+            <button type="submit" class="btn btn--primary btn--xl">
+              Envoyer ma commande
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
+            <span class="mono muted">ou appelez le <a href="tel:+18732007377" style="color:var(--primary);text-decoration:underline;">873 200-7377</a></span>
+          </div>
+
+          <div class="form-status" data-form-status></div>
+        </form>
+
+        <aside class="order-aside">
+          <div class="order-aside__card">
+            <div class="kicker">Bon à savoir</div>
+            <ul class="order-aside__list">
+              <li>
+                <strong>Confirmation par téléphone</strong>
+                <span>On vous rappelle pour confirmer le total et l'heure d'arrivée — généralement en moins de 5 minutes.</span>
+              </li>
+              <li>
+                <strong>Paiement à la porte</strong>
+                <span>Square (débit, crédit, sans contact) ou comptant. Aucun paiement en ligne.</span>
+              </li>
+              <li>
+                <strong>Vérification d'âge</strong>
+                <span>Pour alcool, tabac et loterie : pièce d'identité demandée à la porte. Sans exception.</span>
+              </li>
+              <li>
+                <strong>Article manquant ?</strong>
+                <span>On appelle avant de revenir. Vous choisissez : remplacer, retirer, attendre.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="order-aside__contact">
+            <a class="phone-cta" href="tel:+18732007377" style="width:100%;justify-content:center;padding:14px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Appeler 873 200-7377
+            </a>
+            <div class="order-aside__hours mono">
+              <span><strong>Lun–Sam</strong> 9 h–21 h</span>
+              <span><strong>Dim</strong> 10 h–17 h</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ SNIPPET ========== -->
+  <section>
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <div class="kicker">Questions fréquentes</div>
+          <h2 class="h1" style="margin-top:16px;">Le strict nécessaire.</h2>
+        </div>
+        <p class="lead section-head__lead">Pour les détails, voyez la <a href="/faq" style="text-decoration:underline;color:var(--primary)">page Informations</a>.</p>
+      </div>
+      <div class="faq" data-reveal>
+        <details class="faq__item" open>
+          <summary><span class="mono faq__num">01</span> Y a-t-il un montant minimum de commande ?</summary>
+          <div class="faq__answer">Non. On livre même un seul article. Le frais de livraison fixe par zone reste le même quelle que soit la taille de la commande.</div>
+        </details>
+        <details class="faq__item">
+          <summary><span class="mono faq__num">02</span> Les articles coûtent-ils plus cher qu'au dépanneur ?</summary>
+          <div class="faq__answer">Non. Vous payez exactement le prix affiché en magasin. La livraison fixe est le seul ajout. Reçu disponible sur demande.</div>
+        </details>
+        <details class="faq__item">
+          <summary><span class="mono faq__num">03</span> Comment fonctionne la vérification d'âge ?</summary>
+          <div class="faq__answer">Pour l'alcool, le tabac et la loterie, une pièce d'identité valide est demandée à la porte. Aucune exception. Le livreur peut refuser la livraison si l'âge n'est pas vérifiable.</div>
+        </details>
+        <details class="faq__item">
+          <summary><span class="mono faq__num">04</span> Quelles méthodes de paiement acceptez-vous ?</summary>
+          <div class="faq__answer">Square pour carte (débit, crédit, sans contact) ou comptant. Aucun paiement en ligne — vous payez quand on arrive.</div>
+        </details>
+        <details class="faq__item">
+          <summary><span class="mono faq__num">05</span> Que se passe-t-il si un article manque au dépanneur ?</summary>
+          <div class="faq__answer">On vous appelle avant de quitter le dépanneur. Vous choisissez : remplacer par un produit équivalent, retirer l'article, ou attendre un autre approvisionnement. Vous ne payez jamais pour ce qu'on ne livre pas.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BIG CTA ========== -->
+  <section class="bigcta">
+    <div class="container">
+      <div class="bigcta__box">
+        <div>
+          <div class="kicker" style="color:rgba(255,255,255,.7);">Prêt à commander ?</div>
+          <h2 class="h-display" style="color:#fff;margin-top:16px;font-size:clamp(40px,7vw,88px);">
+            Touchez le numéro.<br/>On s'occupe du reste.
+          </h2>
+          <p class="lead" style="color:rgba(255,255,255,.78);max-width:48ch;margin-top:20px;">Disponible 7 jours sur 7. Réponse rapide, tarif fixe annoncé d'avance.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;">
+            <a class="btn btn--primary btn--xl" href="tel:+18732007377" style="background:#fff;color:var(--blue-700);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              873 200-7377
+            </a>
+            <a class="btn btn--xl" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.3);" href="#commander">
+              Commander en ligne
+            </a>
+          </div>
+        </div>
+        <div class="bigcta__side mono">
+          <div><span>BASE</span><strong>8 $</strong></div>
+          <div><span>PAR KM</span><strong>+1 $</strong></div>
+          <div><span>RAYON</span><strong>0–9 KM</strong></div>
+          <div><span>OUVERT</span><strong>7 J/7</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

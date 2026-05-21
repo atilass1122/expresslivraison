@@ -1,0 +1,6 @@
+# Netlify-style redirects (utilisé aussi par Cloudflare Pages, Render, etc.)
+# Préserve le SEO des anciennes URL
+/livraison-depanneur-sherbrooke              /entreprises       301
+/livraison-sherbrooke-depanneur-sherbrooke   /services          301
+/prix-livraison-sherbrooke                   /tarifs            301
+/express-livraison-sherbrooke                /nous-joindre      301

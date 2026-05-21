@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://expresslivraison.ca/sitemap-index.xml

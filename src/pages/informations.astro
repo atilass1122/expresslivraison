@@ -1,0 +1,493 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Informations — FAQ, paiement, vérification d'âge"
+  description="Informations Express Livraison : FAQ, catégories d'articles, paiement et tarifs, vérification d'âge, secteurs et heures, confidentialité. Livraison locale à Sherbrooke, 7 J/7."
+  bodyClass="page-informations"
+>
+  <!-- ========== HERO ========== -->
+  <section class="info-hero">
+    <div class="container info-hero__grid">
+      <div>
+        <div class="hero__meta">
+          <span class="pill pill--blue">Informations &amp; conditions</span>
+        </div>
+        <h1 class="h-display" style="font-size:clamp(40px,6.5vw,80px);">Tout ce qu'il faut savoir<br/>avant d'<span class="hero__highlight">appeler</span>.</h1>
+        <p class="lead">FAQ, conditions de service, vérification d'âge, paiement, secteurs couverts, confidentialité. Si quelque chose manque, <a href="tel:+18732007377" style="text-decoration:underline;color:var(--primary);">appelez-nous</a>.</p>
+      </div>
+      <nav class="info-toc" aria-label="Table des matières">
+        <span class="kicker">Naviguer</span>
+        <ul>
+          <li><a href="#faq"><span class="mono">01</span> Foire aux questions</a></li>
+          <li><a href="#categories"><span class="mono">02</span> Catégories d'articles</a></li>
+          <li><a href="#paiement"><span class="mono">03</span> Paiement &amp; tarifs</a></li>
+          <li><a href="#age"><span class="mono">04</span> Vérification d'âge</a></li>
+          <li><a href="#zones"><span class="mono">05</span> Secteurs &amp; heures</a></li>
+          <li><a href="#confidentialite"><span class="mono">06</span> Confidentialité</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section id="faq">
+    <div class="container">
+      <div class="info-head" data-reveal>
+        <span class="kicker">Section 01</span>
+        <h2 class="h1" style="margin-top:14px;">Foire aux questions.</h2>
+      </div>
+
+      <div class="info-faq" data-reveal>
+        <div class="info-faq__group">
+          <h3 class="info-faq__group-title">Commande &amp; livraison</h3>
+          <details class="faq__item" open>
+            <summary><span class="mono faq__num">Q1</span> Comment puis-je passer une commande ?</summary>
+            <div class="faq__answer">Deux options : appelez le <a href="tel:+18732007377"><strong>873 200-7377</strong></a> entre 9 h et 21 h (10 h–17 h le dimanche), ou utilisez le <a href="/#commander"><strong>formulaire en ligne</strong></a> et on vous rappelle pour confirmer.</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q2</span> Quel est le délai moyen de livraison ?</summary>
+            <div class="faq__answer">Entre 15 et 35 minutes selon votre secteur et l'achalandage. Sherbrooke centre : 15–25 min. Fleurimont : 20–30 min. Rock Forest et Saint-Élie : 25–35 min.</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q3</span> Y a-t-il un montant minimum de commande ?</summary>
+            <div class="faq__answer">Non. On livre même un seul article. Le frais fixe de livraison par zone reste le même quelle que soit la taille de la commande.</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q4</span> Que faire si vous ne livrez pas dans mon secteur ?</summary>
+            <div class="faq__answer">Notre zone régulière couvre 0 à 9 km autour de Sherbrooke (4 arrondissements). Hors zone, appelez-nous : on évalue selon la distance et l'heure. Pas toujours possible, mais on regarde.</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q5</span> Que se passe-t-il si un article est en rupture au dépanneur ?</summary>
+            <div class="faq__answer">Le livreur vous appelle avant de quitter le dépanneur. Vous décidez : remplacer par un produit équivalent, retirer l'article, ou changer de dépanneur. Vous ne payez jamais pour ce qu'on ne livre pas.</div>
+          </details>
+        </div>
+
+        <div class="info-faq__group">
+          <h3 class="info-faq__group-title">Paiement &amp; prix</h3>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q6</span> Les articles coûtent-ils plus cher qu'au dépanneur ?</summary>
+            <div class="faq__answer">Non. Vous payez exactement le prix affiché en magasin, taxes incluses. Aucune majoration sur les articles. La livraison fixe est le seul ajout au total.</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q7</span> Quels modes de paiement acceptez-vous ?</summary>
+            <div class="faq__answer">Square pour carte (débit, crédit, sans contact via Apple Pay / Google Pay) ou comptant. Aucun paiement en ligne — vous payez quand le livreur arrive à votre porte.</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q8</span> Le pourboire est-il obligatoire ?</summary>
+            <div class="faq__answer">Non, jamais. Les pourboires sont à votre discrétion. Le frais de livraison fixe couvre déjà le service. Si vous souhaitez en laisser un, c'est apprécié, mais ce n'est jamais imposé.</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q9</span> Puis-je obtenir un reçu pour mes dépenses ?</summary>
+            <div class="faq__answer">Oui, sur demande. Le livreur peut imprimer un reçu Square ou nous pouvons vous l'envoyer par courriel. Idéal pour la comptabilité des entreprises.</div>
+          </details>
+        </div>
+
+        <div class="info-faq__group">
+          <h3 class="info-faq__group-title">Produits restreints</h3>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q10</span> Livrez-vous de l'alcool ?</summary>
+            <div class="faq__answer">Oui : bière, vin et spiritueux disponibles au dépanneur. <strong>Une pièce d'identité valide est obligatoire à la porte.</strong> Sans pièce d'identité, le livreur refuse la livraison de l'alcool (les autres articles sont remis, l'alcool est retiré du total).</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q11</span> Livrez-vous des produits du tabac ?</summary>
+            <div class="faq__answer">Oui : cigarettes, cigares, tabac à rouler. <strong>Pièce d'identité obligatoire à la porte.</strong> Précisez la marque, le format et la quantité lors de la commande.</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q12</span> Livrez-vous des billets de loterie ?</summary>
+            <div class="faq__answer">Oui : Loto-Québec (6/49, Lotto Max, Banco, Grande Vie, gratteux). <strong>L'âge minimum de 18 ans est requis</strong> et une pièce d'identité peut être demandée. Précisez le numéro de tirage si applicable.</div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CATEGORIES ========== -->
+  <section id="categories" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="info-head" data-reveal>
+        <span class="kicker">Section 02</span>
+        <h2 class="h1" style="margin-top:14px;">Catégories d'articles livrés.</h2>
+        <p class="lead" style="margin-top:16px;">Cinq familles principales. Tout produit normalement vendu en dépanneur peut être commandé. Si vous ne le voyez pas, demandez quand même.</p>
+      </div>
+
+      <div class="cats">
+        <article class="cat" id="aliments" data-reveal>
+          <div class="cat__header">
+            <div class="mono cat__id">01</div>
+            <div class="cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m5 11 4-7"/><path d="m19 11-4-7"/><path d="M2 11h20"/><path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.6-7.4"/><path d="m9 11 1 9"/><path d="M4.5 15.5h15"/><path d="m15 11-1 9"/></svg>
+            </div>
+            <h3 class="h2">Aliments &amp; collations</h3>
+          </div>
+          <div class="cat__body">
+            <p class="lead" style="font-size:16px;max-width:none;">Du petit creux au manque de lait du matin.</p>
+            <ul class="cat__list">
+              <li>Chips, croustilles, pop-corn</li>
+              <li>Bonbons, chocolats, gomme</li>
+              <li>Biscuits, barres tendres, craquelins</li>
+              <li>Pain, bagels, tortillas</li>
+              <li>Lait, fromage, yogourt, œufs</li>
+              <li>Plats surgelés (pizzas, lasagnes…)</li>
+              <li>Céréales, pains grillés, gruau</li>
+              <li>Conserves, condiments, sauces</li>
+              <li>Crème glacée, desserts congelés</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cat" id="breuvages" data-reveal>
+          <div class="cat__header">
+            <div class="mono cat__id">02 <span class="pill pill--age" style="margin-left:8px;">18 +</span></div>
+            <div class="cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m6 8 1.75 12.28a2 2 0 0 0 2 1.72h4.54a2 2 0 0 0 2-1.72L18 8"/><path d="M5 8h14"/><path d="M7 15a6.47 6.47 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/><path d="m12 8 1-6h2"/></svg>
+            </div>
+            <h3 class="h2">Breuvages</h3>
+          </div>
+          <div class="cat__body">
+            <p class="lead" style="font-size:16px;max-width:none;">De la bouteille d'eau au six-pack du vendredi soir.</p>
+            <ul class="cat__list">
+              <li>Eau embouteillée (plate, gazeuse)</li>
+              <li>Jus de fruits, smoothies</li>
+              <li>Boissons énergisantes (Red Bull, Monster…)</li>
+              <li>Sodas (Coca-Cola, Pepsi, 7Up…)</li>
+              <li>Café (filtre, latté, en canette)</li>
+              <li>Thé, tisanes, kombucha</li>
+              <li>Bière (canette, bouteille, six-pack, 12, 24)</li>
+              <li>Vin (rouge, blanc, rosé, mousseux)</li>
+              <li>Spiritueux (vodka, gin, rhum, whisky)</li>
+            </ul>
+            <div class="cat__note">
+              <strong>Important :</strong> l'âge minimum requis est de 18 ans. Pièce d'identité demandée à la porte, sans exception.
+            </div>
+          </div>
+        </article>
+
+        <article class="cat" id="toilette" data-reveal>
+          <div class="cat__header">
+            <div class="mono cat__id">03</div>
+            <div class="cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 4.8 7 3c-.29 1.8-1.14 3.13-2.29 4.06S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>
+            </div>
+            <h3 class="h2">Articles de toilette</h3>
+          </div>
+          <div class="cat__body">
+            <p class="lead" style="font-size:16px;max-width:none;">Quand vous remarquez à 9 h le dimanche qu'il ne reste plus rien.</p>
+            <ul class="cat__list">
+              <li>Papier toilette (simple, double, triple épaisseur)</li>
+              <li>Mouchoirs (boîtes, paquets)</li>
+              <li>Savons (corps, mains, antibactérien)</li>
+              <li>Dentifrice, brosse à dents, fil dentaire</li>
+              <li>Shampooing, revitalisant</li>
+              <li>Déodorant, antisudorifique</li>
+              <li>Rasoirs, mousse à raser</li>
+              <li>Tampons, serviettes hygiéniques</li>
+              <li>Couches, lingettes pour bébé</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cat" id="divers" data-reveal>
+          <div class="cat__header">
+            <div class="mono cat__id">04 <span class="pill pill--age" style="margin-left:8px;">Loterie 18 +</span></div>
+            <div class="cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.3 10a.7.7 0 0 1-.626-1.079L11.4 3a.7.7 0 0 1 1.198-.043L16.3 8.9a.7.7 0 0 1-.572 1.1Z"/><rect x="3" y="14" width="7" height="7" rx="1"/><circle cx="17.5" cy="17.5" r="3.5"/></svg>
+            </div>
+            <h3 class="h2">Articles divers</h3>
+          </div>
+          <div class="cat__body">
+            <p class="lead" style="font-size:16px;max-width:none;">Le rayon « j'y avais pas pensé ».</p>
+            <ul class="cat__list">
+              <li>Piles AA, AAA, 9V, bouton</li>
+              <li>Cartes prépayées (téléphone, jeux)</li>
+              <li>Cartes de vœux</li>
+              <li>Stylos, crayons, cahiers</li>
+              <li>Journaux du jour (La Presse, Tribune…)</li>
+              <li>Magazines</li>
+              <li>Billets de loterie Loto-Québec</li>
+              <li>Billets de tirage instantané (gratteux)</li>
+              <li>Articles de fête, cadeaux d'urgence</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cat" id="tabac" data-reveal>
+          <div class="cat__header">
+            <div class="mono cat__id">05 <span class="pill pill--age" style="margin-left:8px;">18 +</span></div>
+            <div class="cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 12H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h14"/><path d="M22 12v4"/><path d="M18 12v4"/><path d="M7 5a2 2 0 0 0 2 2 2 2 0 0 1 2 2"/><path d="M14 5a2 2 0 0 0 2 2 2 2 0 0 1 2 2"/></svg>
+            </div>
+            <h3 class="h2">Tabac</h3>
+          </div>
+          <div class="cat__body">
+            <p class="lead" style="font-size:16px;max-width:none;">Service réservé aux adultes. Pièce d'identité obligatoire à la porte.</p>
+            <ul class="cat__list">
+              <li>Cigarettes (toutes marques et formats)</li>
+              <li>Cigares, cigarillos</li>
+              <li>Tabac à rouler</li>
+              <li>Papier à rouler, filtres</li>
+              <li>Allumettes</li>
+              <li>Briquets jetables et rechargeables</li>
+            </ul>
+            <div class="cat__note">
+              <strong>Important :</strong> tout achat de tabac requiert une pièce d'identité valide à la porte. Aucune exception. Précisez exactement la marque, le format et la quantité lors de la commande.
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PAIEMENT ========== -->
+  <section id="paiement">
+    <div class="container">
+      <div class="info-head" data-reveal>
+        <span class="kicker">Section 03</span>
+        <h2 class="h1" style="margin-top:14px;">Paiement &amp; tarifs.</h2>
+      </div>
+
+      <div class="pay-grid" data-reveal>
+        <div class="pay-card">
+          <div class="pay-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+          </div>
+          <h3 class="h3">Carte (Square)</h3>
+          <p>Débit, crédit, sans contact. Apple Pay, Google Pay, montre. Le livreur arrive avec un terminal portatif.</p>
+          <ul class="pay-card__list">
+            <li>Visa, Mastercard, AMEX</li>
+            <li>Interac</li>
+            <li>Sans contact</li>
+          </ul>
+        </div>
+        <div class="pay-card pay-card--primary">
+          <div class="pay-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+          </div>
+          <h3 class="h3" style="color:#fff;">Comptant</h3>
+          <p style="color:rgba(255,255,255,.78);">Argent comptant accepté. Apportez la monnaie raisonnable si possible — le livreur n'apporte pas toujours beaucoup de change.</p>
+          <ul class="pay-card__list" style="color:rgba(255,255,255,.78);">
+            <li style="border-color:rgba(255,255,255,.2);">CAD uniquement</li>
+            <li style="border-color:rgba(255,255,255,.2);">Monnaie raisonnable svp</li>
+            <li style="border-color:rgba(255,255,255,.2);">Reçu sur demande</li>
+          </ul>
+        </div>
+        <div class="pay-card">
+          <div class="pay-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/></svg>
+          </div>
+          <h3 class="h3">Pourboire</h3>
+          <p>Toujours à votre discrétion. Jamais d'ajout automatique, jamais de pression. Apprécié si vous trouvez le service à la hauteur.</p>
+          <ul class="pay-card__list">
+            <li>Au choix uniquement</li>
+            <li>Jamais imposé</li>
+            <li>Carte ou comptant</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pay-summary" data-reveal>
+        <div class="pay-summary__title">
+          <span class="kicker">Composition du total</span>
+          <h3 class="h2" style="margin-top:14px;">Trois lignes,<br/>pas une de plus.</h3>
+        </div>
+        <div class="pay-summary__lines">
+          <div class="pay-summary__line">
+            <div>
+              <strong>Prix des articles</strong>
+              <span>Au prix du dépanneur, sans majoration.</span>
+            </div>
+            <span class="mono">prix tablette</span>
+          </div>
+          <div class="pay-summary__line">
+            <div>
+              <strong>Taxes applicables</strong>
+              <span>TPS / TVQ sur les articles taxables, calculées par le dépanneur.</span>
+            </div>
+            <span class="mono">15 % approx.</span>
+          </div>
+          <div class="pay-summary__line">
+            <div>
+              <strong>Livraison à la distance</strong>
+              <span>Formule simple : 8 $ jusqu'à 2 km, puis +1 $/km. Annoncée d'avance.</span>
+            </div>
+            <span class="mono">8–15 $</span>
+          </div>
+          <div class="pay-summary__line pay-summary__line--total">
+            <div>
+              <strong>Total à la porte</strong>
+              <span>Connu avant qu'on parte. Payable par carte ou comptant.</span>
+            </div>
+            <span class="mono">= total</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ÂGE ========== -->
+  <section id="age" style="background:var(--grad-ink);color:#fff;">
+    <div class="container">
+      <div class="info-head" data-reveal style="border-bottom-color:rgba(255,255,255,.12);">
+        <span class="kicker" style="color:#8FAFFF;">Section 04</span>
+        <h2 class="h1" style="margin-top:14px;color:#fff;">Vérification d'âge.</h2>
+      </div>
+      <div class="age-grid" data-reveal>
+        <div>
+          <p class="lead" style="color:rgba(255,255,255,.78);max-width:48ch;">Pour tout produit restreint — alcool, tabac, loterie — la loi québécoise exige la vérification de l'âge au moment de la livraison. Nous appliquons une règle simple : <strong style="color:#fff;">aucune exception, aucune négociation.</strong></p>
+        </div>
+        <div class="age-list">
+          <div class="age-item">
+            <div class="age-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M5 16c.7-1.3 1.8-2 3-2s2.3.7 3 2"/><path d="M14 9h5M14 13h5"/></svg>
+            </div>
+            <div>
+              <strong>Pièce d'identité valide avec photo</strong>
+              <span>Permis de conduire, carte d'assurance-maladie photo, passeport, carte d'identité.</span>
+            </div>
+          </div>
+          <div class="age-item">
+            <div class="age-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <div>
+              <strong>Âge minimum : 18 ans</strong>
+              <span>Pour l'alcool, le tabac et la loterie. Le livreur vérifie la date de naissance, pas seulement la photo.</span>
+            </div>
+          </div>
+          <div class="age-item">
+            <div class="age-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.7 2h6.6L22 8.7v6.6L15.3 22H8.7L2 15.3V8.7z"/><path d="M12 8v4M12 16h.01"/></svg>
+            </div>
+            <div>
+              <strong>Sans pièce d'identité = pas de livraison</strong>
+              <span>Du produit restreint. Les autres articles vous sont remis. Vous ne payez que ce qui est livré.</span>
+            </div>
+          </div>
+          <div class="age-item">
+            <div class="age-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>
+            </div>
+            <div>
+              <strong>Refus en cas de doute</strong>
+              <span>Le livreur peut refuser la livraison s'il a un doute raisonnable sur l'âge ou l'état du client.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ZONES & HEURES ========== -->
+  <section id="zones">
+    <div class="container">
+      <div class="info-head" data-reveal>
+        <span class="kicker">Section 05</span>
+        <h2 class="h1" style="margin-top:14px;">Secteurs &amp; heures.</h2>
+      </div>
+      <div class="zones-grid" data-reveal>
+        <div class="zones-table">
+          <div class="zones-table__head">
+            <div>Secteur (exemple)</div>
+            <div>Distance</div>
+            <div>Livraison</div>
+          </div>
+          <div class="zones-table__row">
+            <div><span class="z-dot" style="background:var(--blue-600)"></span><strong>Sherbrooke</strong><span>Centre · Jacques-Cartier</span></div>
+            <div class="mono">~2 km</div>
+            <div class="mono">8 $</div>
+          </div>
+          <div class="zones-table__row">
+            <div><span class="z-dot" style="background:var(--blue-500)"></span><strong>Fleurimont</strong><span>Nord-est</span></div>
+            <div class="mono">~5 km</div>
+            <div class="mono">11 $</div>
+          </div>
+          <div class="zones-table__row">
+            <div><span class="z-dot" style="background:var(--blue-700)"></span><strong>Rock Forest</strong><span>Sud-ouest</span></div>
+            <div class="mono">~7 km</div>
+            <div class="mono">13 $</div>
+          </div>
+          <div class="zones-table__row">
+            <div><span class="z-dot" style="background:var(--ink)"></span><strong>Saint-Élie-d'Orford</strong><span>Ouest</span></div>
+            <div class="mono">~8 km</div>
+            <div class="mono">14 $</div>
+          </div>
+        </div>
+        <div class="hours-card">
+          <div class="kicker">Heures d'ouverture</div>
+          <div class="hours-card__today">
+            <span class="pill pill--live"><span class="dot"></span><span data-status>Ouvert</span></span>
+          </div>
+          <div class="hours-card__row">
+            <div>Lundi — Samedi</div>
+            <div class="mono">9 h — 21 h</div>
+          </div>
+          <div class="hours-card__row">
+            <div>Dimanche</div>
+            <div class="mono">10 h — 17 h</div>
+          </div>
+          <div class="hours-card__row">
+            <div>Jours fériés</div>
+            <div class="mono">Horaire variable · appeler</div>
+          </div>
+          <a class="btn btn--primary" href="tel:+18732007377" style="margin-top:20px;justify-content:center;width:100%;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            873 200-7377
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONFIDENTIALITÉ ========== -->
+  <section id="confidentialite" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="info-head" data-reveal>
+        <span class="kicker">Section 06</span>
+        <h2 class="h1" style="margin-top:14px;">Confidentialité<br/>&amp; conditions.</h2>
+      </div>
+      <div class="conf-grid" data-reveal>
+        <article>
+          <h3 class="h3">Données personnelles</h3>
+          <p>Nous collectons uniquement les informations nécessaires à la livraison : nom, numéro de téléphone, adresse et liste d'articles. Ces données ne sont jamais revendues ni partagées avec des tiers, sauf obligation légale.</p>
+        </article>
+        <article>
+          <h3 class="h3">Conservation</h3>
+          <p>Les commandes courriel sont conservées 90 jours à des fins de service client et de comptabilité. Au-delà, elles sont supprimées. Vous pouvez demander la suppression à tout moment : <a href="mailto:info@expresslivraison.ca" style="text-decoration:underline;color:var(--primary);">info@expresslivraison.ca</a>.</p>
+        </article>
+        <article>
+          <h3 class="h3">Cookies &amp; analytique</h3>
+          <p>Le site utilise uniquement les cookies strictement nécessaires à son fonctionnement. Pas de pistage publicitaire, pas de revente de données. Analytique anonyme pour mesurer la performance.</p>
+        </article>
+        <article>
+          <h3 class="h3">Paiement &amp; sécurité</h3>
+          <p>Aucun paiement n'est effectué en ligne. Toutes les transactions ont lieu à la porte via Square (terminal sécurisé) ou en comptant. Nous ne conservons aucune information de carte bancaire.</p>
+        </article>
+        <article>
+          <h3 class="h3">Responsabilité du livreur</h3>
+          <p>Le livreur peut refuser une livraison s'il estime que la situation pose un risque (intoxication apparente, doute sur l'âge, comportement menaçant). Sa sécurité et le respect de la loi priment.</p>
+        </article>
+        <article>
+          <h3 class="h3">Modifications &amp; annulations</h3>
+          <p>Vous pouvez modifier ou annuler votre commande tant que le livreur n'a pas atteint le dépanneur. Une fois les articles achetés, l'annulation n'est plus possible mais les articles peuvent être renvoyés au commerce sans frais pour vous.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section>
+    <div class="container">
+      <div class="info-cta">
+        <div>
+          <div class="kicker">Une question reste sans réponse ?</div>
+          <h2 class="h1" style="margin-top:14px;max-width:18ch;">Appelez. C'est encore<br/>la façon la plus rapide.</h2>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a class="btn btn--primary btn--xl" href="tel:+18732007377">873 200-7377</a>
+          <a class="btn btn--xl" href="mailto:info@expresslivraison.ca">Écrire un courriel</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
