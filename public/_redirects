@@ -1,6 +1,18 @@
-# Netlify-style redirects (utilisé aussi par Cloudflare Pages, Render, etc.)
-# Préserve le SEO des anciennes URL
-/livraison-depanneur-sherbrooke              /entreprises       301
-/livraison-sherbrooke-depanneur-sherbrooke   /services          301
-/prix-livraison-sherbrooke                   /tarifs            301
-/express-livraison-sherbrooke                /nous-joindre      301
+# Redirections 301 — préservation du SEO des anciennes URL.
+# Format Netlify, lu nativement par Cloudflare Pages (vrai 301 côté serveur).
+# Destinations DIRECTES (aucune chaîne de redirection).
+
+# --- Anciennes URL du site CMS (déjà bien référencées) ---
+/livraison-depanneur-sherbrooke              /entreprises             301
+/livraison-sherbrooke-depanneur-sherbrooke   /services                301
+/prix-livraison-sherbrooke                   /informations#paiement   301
+/express-livraison-sherbrooke                /nous-joindre            301
+
+# --- Pages de politique de confidentialité de l'ancien site CMS ---
+/politique-conf                              /informations#confidentialite   301
+/politique-de-confidentialite               /informations#confidentialite   301
+
+# --- Anciennes routes internes (ancien design Astro) ---
+/tarifs                                      /informations#paiement   301
+/faq                                         /informations            301
+/commander                                   /#commander              301

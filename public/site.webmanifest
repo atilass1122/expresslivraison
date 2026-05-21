@@ -1,0 +1,12 @@
+{
+  "name": "Express Livraison",
+  "short_name": "Express Livraison",
+  "icons": [
+    { "src": "/favicon-96.png", "sizes": "96x96", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#0A47C2",
+  "background_color": "#0A47C2",
+  "display": "browser",
+  "lang": "fr-CA"
+}

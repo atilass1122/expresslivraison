@@ -1,12 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// FAQPage — éligible aux résultats enrichis Google (reprend les Q/R affichées).
+const faq = [
+  ['Comment puis-je passer une commande ?', "Deux options : appelez le 873 200-7377 entre 9 h et 21 h (10 h–17 h le dimanche), ou utilisez le formulaire en ligne et on vous rappelle pour confirmer."],
+  ['Quel est le délai moyen de livraison ?', "Entre 15 et 35 minutes selon votre secteur et l'achalandage. Sherbrooke centre : 15–25 min. Fleurimont : 20–30 min. Rock Forest et Saint-Élie : 25–35 min."],
+  ['Y a-t-il un montant minimum de commande ?', "Non. On livre même un seul article. Le frais fixe de livraison par zone reste le même quelle que soit la taille de la commande."],
+  ['Que faire si vous ne livrez pas dans mon secteur ?', "Notre zone régulière couvre 0 à 9 km autour de Sherbrooke. Hors zone, appelez-nous : on évalue selon la distance et l'heure."],
+  ["Que se passe-t-il si un article est en rupture au dépanneur ?", "Le livreur vous appelle avant de quitter le dépanneur. Vous décidez : remplacer, retirer ou changer de dépanneur. Vous ne payez jamais pour ce qu'on ne livre pas."],
+  ['Les articles coûtent-ils plus cher qu’au dépanneur ?', "Non. Vous payez exactement le prix affiché en magasin, taxes incluses. La livraison fixe est le seul ajout au total."],
+  ['Quels modes de paiement acceptez-vous ?', "Square pour carte (débit, crédit, sans contact via Apple Pay / Google Pay) ou comptant. Aucun paiement en ligne : vous payez à la porte."],
+  ['Le pourboire est-il obligatoire ?', "Non, jamais. Les pourboires sont à votre discrétion. Le frais de livraison fixe couvre déjà le service."],
+  ['Puis-je obtenir un reçu ?', "Oui, sur demande. Le livreur peut imprimer un reçu Square ou nous pouvons vous l'envoyer par courriel."],
+  ["Livrez-vous de l'alcool ?", "Oui : bière, vin et spiritueux. Une pièce d'identité valide est obligatoire à la porte, sans exception."],
+  ['Livrez-vous des produits du tabac ?', "Oui : cigarettes, cigares, tabac à rouler. Pièce d'identité obligatoire à la porte."],
+  ['Livrez-vous des billets de loterie ?', "Oui : Loto-Québec (6/49, Lotto Max, Banco, Grande Vie, gratteux). Âge minimum 18 ans, pièce d'identité possible."],
+];
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
 ---
 
 <Layout
-  title="Informations — FAQ, paiement, vérification d'âge"
-  description="Informations Express Livraison : FAQ, catégories d'articles, paiement et tarifs, vérification d'âge, secteurs et heures, confidentialité. Livraison locale à Sherbrooke, 7 J/7."
+  title="Informations · FAQ, paiement, tarifs"
+  description="FAQ, paiement, tarifs, vérification d'âge et secteurs desservis. Livraison locale à Sherbrooke, 7 j/7. Appelez le 873 200-7377."
   bodyClass="page-informations"
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />
   <!-- ========== HERO ========== -->
   <section class="info-hero">
     <div class="container info-hero__grid">
