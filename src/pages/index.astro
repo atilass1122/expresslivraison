@@ -196,20 +196,6 @@ import Layout from '../layouts/Layout.astro';
             Commander en ligne <span class="arr">↓</span>
           </a>
         </div>
-        <ul class="hero__metrics">
-          <li>
-            <div class="hero__metric-num"><span class="tabular">0–9</span><span class="hero__metric-unit">km</span></div>
-            <div class="hero__metric-lbl">Rayon d'action local</div>
-          </li>
-          <li>
-            <div class="hero__metric-num"><span class="tabular">7</span><span class="hero__metric-unit">J/7</span></div>
-            <div class="hero__metric-lbl">Service continu</div>
-          </li>
-          <li>
-            <div class="hero__metric-num"><span class="tabular">~25</span><span class="hero__metric-unit">min</span></div>
-            <div class="hero__metric-lbl">Délai porte-à-porte</div>
-          </li>
-        </ul>
       </div>
 
       <aside class="hero__panel" aria-label="Panneau de répartition">
@@ -253,94 +239,6 @@ import Layout from '../layouts/Layout.astro';
           <span class="mono">Dim · 10 h–17 h</span>
         </div>
       </aside>
-    </div>
-  </section>
-
-  <!-- ========== TRUST STRIP ========== -->
-  <section class="trust no-divider" aria-label="Pourquoi nous">
-    <div class="container">
-      <div class="trust__grid">
-        <div class="trust__item">
-          <span class="trust__item-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-          <div>
-            <strong>8 $ + 1 $/km</strong>
-            <span>Formule unique, annoncée d'avance</span>
-          </div>
-        </div>
-        <div class="trust__item">
-          <span class="trust__item-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
-          <div>
-            <strong>7 jours sur 7</strong>
-            <span>Service continu, jours fériés inclus</span>
-          </div>
-        </div>
-        <div class="trust__item">
-          <span class="trust__item-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-          <div>
-            <strong>Local d'abord</strong>
-            <span>Équipe et dépanneurs d'ici</span>
-          </div>
-        </div>
-        <div class="trust__item">
-          <span class="trust__item-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20M6 14h4"/></svg></span>
-          <div>
-            <strong>Paiement à la porte</strong>
-            <span>Square (carte) ou comptant</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SERVICES ========== -->
-  <section>
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <div>
-          <div class="kicker">Nos services</div>
-          <h2 class="h1" style="margin-top:16px;">Quatre façons<br/>de vous dépanner.</h2>
-        </div>
-        <p class="lead section-head__lead">On ne se limite pas au dépanneur. Petit colis, essentiels, courses rapides — tout ce qui se livre dans un rayon de 9 km, on s'en occupe. <strong>Repas de restaurant sur demande</strong> (appelez-nous).</p>
-      </div>
-      <div class="services services--4">
-        <a href="/services#depanneur" class="service" data-reveal>
-          <div class="service__icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h24l-1.5 14a2 2 0 0 1-2 1.8H7.5a2 2 0 0 1-2-1.8z"/><path d="M9 12V8a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4"/></svg>
-          </div>
-          <div class="service__num mono">01</div>
-          <h3 class="h3">Dépanneur</h3>
-          <p>Aliments, breuvages, articles de toilette, loterie, tabac. Cinq familles, centaines de produits.</p>
-          <span class="pill pill--age">Alcool · Tabac · Loterie 18 +</span>
-          <span class="service__more">Voir détails <span class="arr">→</span></span>
-        </a>
-        <a href="/services#colis" class="service" data-reveal>
-          <div class="service__icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4l12 6v12l-12 6L4 22V10z"/><path d="M4 10l12 6 12-6M16 16v12"/></svg>
-          </div>
-          <div class="service__num mono">02</div>
-          <h3 class="h3">Petits colis</h3>
-          <p>Livraison point A à point B. Documents, clés, oublis, courses entre voisins. Discret et rapide.</p>
-          <span class="service__more">Voir détails <span class="arr">→</span></span>
-        </a>
-        <a href="/services#essentiels" class="service" data-reveal>
-          <div class="service__icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h8v6h6v8h-6v6h-8v-6H6v-8h6z"/></svg>
-          </div>
-          <div class="service__num mono">03</div>
-          <h3 class="h3">Articles essentiels</h3>
-          <p>Pharmacie, hygiène, produits ménagers, articles pour bébé. Quand sortir n'est pas une option.</p>
-          <span class="service__more">Voir détails <span class="arr">→</span></span>
-        </a>
-        <a href="/services#rapide" class="service" data-reveal>
-          <div class="service__icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l-6 14h8l-2 10 10-16h-8z"/></svg>
-          </div>
-          <div class="service__num mono">04</div>
-          <h3 class="h3">Commandes rapides</h3>
-          <p>Tout ce qui n'entre pas dans les autres cases — incluant <strong>repas de restaurant sur demande</strong>. Une seule règle : ça doit être dans le rayon de 9 km.</p>
-          <span class="service__more">Voir détails <span class="arr">→</span></span>
-        </a>
-      </div>
     </div>
   </section>
 
@@ -425,6 +323,58 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <p class="tarif__foot mono">* Distance calculée depuis le dépanneur. Taxes applicables sur les articles. Hors 9 km : appelez, on évalue.</p>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section>
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <div class="kicker">Nos services</div>
+          <h2 class="h1" style="margin-top:16px;">Quatre façons<br/>de vous dépanner.</h2>
+        </div>
+        <p class="lead section-head__lead">On ne se limite pas au dépanneur. Petit colis, essentiels, courses rapides — tout ce qui se livre dans un rayon de 9 km, on s'en occupe. <strong>Repas de restaurant sur demande</strong> (appelez-nous).</p>
+      </div>
+      <div class="services services--4">
+        <a href="/services#depanneur" class="service" data-reveal>
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h24l-1.5 14a2 2 0 0 1-2 1.8H7.5a2 2 0 0 1-2-1.8z"/><path d="M9 12V8a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4"/></svg>
+          </div>
+          <div class="service__num mono">01</div>
+          <h3 class="h3">Dépanneur</h3>
+          <p>Aliments, breuvages, articles de toilette, loterie, tabac. Cinq familles, centaines de produits.</p>
+          <span class="pill pill--age">Alcool · Tabac · Loterie 18 +</span>
+          <span class="service__more">Voir détails <span class="arr">→</span></span>
+        </a>
+        <a href="/services#colis" class="service" data-reveal>
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4l12 6v12l-12 6L4 22V10z"/><path d="M4 10l12 6 12-6M16 16v12"/></svg>
+          </div>
+          <div class="service__num mono">02</div>
+          <h3 class="h3">Petits colis</h3>
+          <p>Livraison point A à point B. Documents, clés, oublis, courses entre voisins. Discret et rapide.</p>
+          <span class="service__more">Voir détails <span class="arr">→</span></span>
+        </a>
+        <a href="/services#essentiels" class="service" data-reveal>
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h8v6h6v8h-6v6h-8v-6H6v-8h6z"/></svg>
+          </div>
+          <div class="service__num mono">03</div>
+          <h3 class="h3">Articles essentiels</h3>
+          <p>Pharmacie, hygiène, produits ménagers, articles pour bébé. Quand sortir n'est pas une option.</p>
+          <span class="service__more">Voir détails <span class="arr">→</span></span>
+        </a>
+        <a href="/services#rapide" class="service" data-reveal>
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l-6 14h8l-2 10 10-16h-8z"/></svg>
+          </div>
+          <div class="service__num mono">04</div>
+          <h3 class="h3">Commandes rapides</h3>
+          <p>Tout ce qui n'entre pas dans les autres cases — incluant <strong>repas de restaurant sur demande</strong>. Une seule règle : ça doit être dans le rayon de 9 km.</p>
+          <span class="service__more">Voir détails <span class="arr">→</span></span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -688,13 +638,26 @@ import Layout from '../layouts/Layout.astro';
             </a>
           </div>
         </div>
-        <div class="bigcta__side mono">
-          <div><span>BASE</span><strong>8 $</strong></div>
-          <div><span>PAR KM</span><strong>+1 $</strong></div>
-          <div><span>RAYON</span><strong>0–9 KM</strong></div>
-          <div><span>OUVERT</span><strong>7 J/7</strong></div>
+        <div class="bigcta__aside">
+          <div class="bigcta__side mono">
+            <div><span>BASE</span><strong>8 $</strong></div>
+            <div><span>PAR KM</span><strong>+1 $</strong></div>
+            <div><span>RAYON</span><strong>0–9 KM</strong></div>
+            <div><span>OUVERT</span><strong>7 J/7</strong></div>
+          </div>
+          <div class="bigcta__pay">
+            <div class="bigcta__pay-head">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+              <span class="mono">Paiement à la porte</span>
+            </div>
+            <strong>Square ou comptant</strong>
+            <div class="bigcta__pay-tags">
+              <span>Débit</span><span>Crédit</span><span>Sans contact</span><span>Comptant</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
 </Layout>
