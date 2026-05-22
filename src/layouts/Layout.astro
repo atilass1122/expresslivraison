@@ -256,7 +256,7 @@ const structuredData = [
             const orderField = form.querySelector<HTMLTextAreaElement>('[name="order"]');
             const ageBox = form.querySelector<HTMLInputElement>('[name="age_consent"]');
             if (ageBox && orderField) {
-              const mentions18 = /(biere|bière|alcool|vodka|gin|rhum|cigar|cigare|tabac|loto|loter|vin|spiritu)/i.test(orderField.value);
+              const mentions18 = /(biere|bière|alcool|vodka|gin|rhum|loto|loter|vin|spiritu)/i.test(orderField.value);
               if (mentions18 && !ageBox.checked) {
                 ageBox.closest('.checkbox')?.classList.add('field--error');
                 ok = false;

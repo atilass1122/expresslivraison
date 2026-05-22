@@ -13,7 +13,6 @@ const faq = [
   ['Le pourboire est-il obligatoire ?', "Non, jamais. Les pourboires sont à votre discrétion. Le frais de livraison fixe couvre déjà le service."],
   ['Puis-je obtenir un reçu ?', "Oui, sur demande. Le livreur peut imprimer un reçu Square ou nous pouvons vous l'envoyer par courriel."],
   ["Livrez-vous de l'alcool ?", "Oui : bière, vin et spiritueux. Une pièce d'identité valide est obligatoire à la porte, sans exception."],
-  ['Livrez-vous des produits du tabac ?', "Oui : cigarettes, cigares, tabac à rouler. Pièce d'identité obligatoire à la porte."],
   ['Livrez-vous des billets de loterie ?', "Oui : Loto-Québec (6/49, Lotto Max, Banco, Grande Vie, gratteux). Âge minimum 18 ans, pièce d'identité possible."],
 ];
 const faqJsonLd = {
@@ -117,11 +116,7 @@ const faqJsonLd = {
             <div class="faq__answer">Oui : bière, vin et spiritueux disponibles au dépanneur. <strong>Une pièce d'identité valide est obligatoire à la porte.</strong> Sans pièce d'identité, le livreur refuse la livraison de l'alcool (les autres articles sont remis, l'alcool est retiré du total).</div>
           </details>
           <details class="faq__item">
-            <summary><span class="mono faq__num">Q11</span> Livrez-vous des produits du tabac ?</summary>
-            <div class="faq__answer">Oui : cigarettes, cigares, tabac à rouler. <strong>Pièce d'identité obligatoire à la porte.</strong> Précisez la marque, le format et la quantité lors de la commande.</div>
-          </details>
-          <details class="faq__item">
-            <summary><span class="mono faq__num">Q12</span> Livrez-vous des billets de loterie ?</summary>
+            <summary><span class="mono faq__num">Q11</span> Livrez-vous des billets de loterie ?</summary>
             <div class="faq__answer">Oui : Loto-Québec (6/49, Lotto Max, Banco, Grande Vie, gratteux). <strong>L'âge minimum de 18 ans est requis</strong> et une pièce d'identité peut être demandée. Précisez le numéro de tirage si applicable.</div>
           </details>
         </div>
@@ -135,7 +130,7 @@ const faqJsonLd = {
       <div class="info-head" data-reveal>
         <span class="kicker">Section 02</span>
         <h2 class="h1" style="margin-top:14px;">Catégories d'articles livrés.</h2>
-        <p class="lead" style="margin-top:16px;">Cinq familles principales. Tout produit normalement vendu en dépanneur peut être commandé. Si vous ne le voyez pas, demandez quand même.</p>
+        <p class="lead" style="margin-top:16px;">Quatre familles principales. Tout produit normalement vendu en dépanneur peut être commandé. Si vous ne le voyez pas, demandez quand même.</p>
       </div>
 
       <div class="cats">
@@ -238,29 +233,6 @@ const faqJsonLd = {
           </div>
         </article>
 
-        <article class="cat" id="tabac" data-reveal>
-          <div class="cat__header">
-            <div class="mono cat__id">05 <span class="pill pill--age" style="margin-left:8px;">18 +</span></div>
-            <div class="cat__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 12H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h14"/><path d="M22 12v4"/><path d="M18 12v4"/><path d="M7 5a2 2 0 0 0 2 2 2 2 0 0 1 2 2"/><path d="M14 5a2 2 0 0 0 2 2 2 2 0 0 1 2 2"/></svg>
-            </div>
-            <h3 class="h2">Tabac</h3>
-          </div>
-          <div class="cat__body">
-            <p class="lead" style="font-size:16px;max-width:none;">Service réservé aux adultes. Pièce d'identité obligatoire à la porte.</p>
-            <ul class="cat__list">
-              <li>Cigarettes (toutes marques et formats)</li>
-              <li>Cigares, cigarillos</li>
-              <li>Tabac à rouler</li>
-              <li>Papier à rouler, filtres</li>
-              <li>Allumettes</li>
-              <li>Briquets jetables et rechargeables</li>
-            </ul>
-            <div class="cat__note">
-              <strong>Important :</strong> tout achat de tabac requiert une pièce d'identité valide à la porte. Aucune exception. Précisez exactement la marque, le format et la quantité lors de la commande.
-            </div>
-          </div>
-        </article>
       </div>
     </div>
   </section>
@@ -360,7 +332,7 @@ const faqJsonLd = {
       </div>
       <div class="age-grid" data-reveal>
         <div>
-          <p class="lead" style="color:rgba(255,255,255,.78);max-width:48ch;">Pour tout produit restreint — alcool, tabac, loterie — la loi québécoise exige la vérification de l'âge au moment de la livraison. Nous appliquons une règle simple : <strong style="color:#fff;">aucune exception, aucune négociation.</strong></p>
+          <p class="lead" style="color:rgba(255,255,255,.78);max-width:48ch;">Pour tout produit restreint — alcool, loterie — la loi québécoise exige la vérification de l'âge au moment de la livraison. Nous appliquons une règle simple : <strong style="color:#fff;">aucune exception, aucune négociation.</strong></p>
         </div>
         <div class="age-list">
           <div class="age-item">
@@ -378,7 +350,7 @@ const faqJsonLd = {
             </div>
             <div>
               <strong>Âge minimum : 18 ans</strong>
-              <span>Pour l'alcool, le tabac et la loterie. Le livreur vérifie la date de naissance, pas seulement la photo.</span>
+              <span>Pour l'alcool et la loterie. Le livreur vérifie la date de naissance, pas seulement la photo.</span>
             </div>
           </div>
           <div class="age-item">
