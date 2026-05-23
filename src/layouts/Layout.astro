@@ -27,7 +27,7 @@ const {
   bodyClass = '',
 } = Astro.props;
 
-const pageTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.tagline}`;
+const pageTitle = title ? `${title} | ${site.name}` : `${site.name} · ${site.tagline}`;
 const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).toString();
 
 const openingHours = [
@@ -273,7 +273,7 @@ const structuredData = [
             }
 
             const fd = new FormData(form);
-            const subject = 'Nouvelle commande — Express Livraison';
+            const subject = 'Nouvelle commande · Express Livraison';
             const body =
               'NOUVELLE COMMANDE\n' +
               '────────────────────────\n' +
@@ -290,7 +290,7 @@ const structuredData = [
             const mailto = 'mailto:info@expresslivraison.ca?subject=' +
               encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
             if (status) {
-              status.innerHTML = "✓ Formulaire validé. Votre client courriel s'ouvre — ou appelez le <a href=\"tel:+18732007377\"><strong>873 200-7377</strong></a> directement.";
+              status.innerHTML = "✓ Formulaire validé. Votre client courriel s'ouvre. Ou appelez le <a href=\"tel:+18732007377\"><strong>873 200-7377</strong></a> directement.";
               status.className = 'form-status form-status--ok';
             }
             window.location.href = mailto;
@@ -324,7 +324,7 @@ const structuredData = [
               'Volume      : ' + (fd.get('volume') || '') + '\n' +
               'Détails     :\n' + (fd.get('details') || '') + '\n';
             const mailto = 'mailto:info@expresslivraison.ca?subject=' +
-              encodeURIComponent('Demande soumission B2B — Express Livraison') +
+              encodeURIComponent('Demande soumission B2B · Express Livraison') +
               '&body=' + encodeURIComponent(body);
             if (status) {
               status.innerHTML = "✓ Demande validée. Votre client courriel s'ouvre. Nous répondons dans les 24 h ouvrables.";
@@ -351,7 +351,7 @@ const structuredData = [
             }
             const fd = new FormData(form);
             const body =
-              'MESSAGE — SITE WEB\n' +
+              'MESSAGE · SITE WEB\n' +
               '────────────────────────\n' +
               'Nom       : ' + (fd.get('name') || '') + '\n' +
               'Courriel  : ' + (fd.get('email') || '') + '\n' +
@@ -359,7 +359,7 @@ const structuredData = [
               'Sujet     : ' + (fd.get('subject') || '') + '\n' +
               '\nMessage   :\n' + (fd.get('message') || '') + '\n';
             const mailto = 'mailto:info@expresslivraison.ca?subject=' +
-              encodeURIComponent('Message site web — ' + (fd.get('subject') || 'Contact')) +
+              encodeURIComponent('Message site web · ' + (fd.get('subject') || 'Contact')) +
               '&body=' + encodeURIComponent(body);
             if (status) {
               status.innerHTML = "✓ Message validé. Votre client courriel s'ouvre. Réponse sous 24 h ouvrables.";
