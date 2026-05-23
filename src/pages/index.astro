@@ -115,23 +115,57 @@ import Layout from '../layouts/Layout.astro';
           <animateMotion dur="14s" repeatCount="indefinite" rotate="0">
             <mpath href="#rb-route-anim"/>
           </animateMotion>
-          <g transform="translate(-58 -32)">
-            <ellipse cx="58" cy="34" rx="58" ry="4" fill="rgba(0,0,0,.4)"/>
-            <rect x="8" y="0" width="68" height="32" rx="2" fill="#fff"/>
-            <path d="M76 4 L 110 4 Q 116 4 116 10 L 116 32 L 76 32 Z" fill="#0A47C2"/>
-            <path d="M80 6 L 110 6 Q 114 6 114 10 L 114 18 L 80 18 Z" fill="#7BB4FF" opacity=".85"/>
-            <rect x="8" y="0" width="68" height="3" fill="#0A47C2"/>
-            <line x1="42" y1="4" x2="42" y2="30" stroke="#dde5f4" stroke-width="1"/>
-            <rect x="14" y="10" width="22" height="16" fill="#0A47C2"/>
-            <text x="25" y="22" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="#fff">EL</text>
-            <text x="50" y="14" font-family="Space Grotesk, sans-serif" font-size="6" font-weight="600" fill="#0A47C2" letter-spacing="0.4">EXPRESS</text>
-            <text x="50" y="22" font-family="Space Grotesk, sans-serif" font-size="6" font-weight="600" fill="#0A47C2" letter-spacing="0.4">LIVRAISON</text>
-            <text x="50" y="28" font-family="JetBrains Mono, monospace" font-size="4" fill="#0A47C2" opacity=".7">873 200-7377</text>
-            <circle cx="114" cy="24" r="2" fill="#FFD54A"/>
-            <circle cx="24" cy="34" r="6" fill="#0E1A38"/>
-            <circle cx="24" cy="34" r="2.5" fill="#4C75DA"/>
-            <circle cx="96" cy="34" r="6" fill="#0E1A38"/>
-            <circle cx="96" cy="34" r="2.5" fill="#4C75DA"/>
+          <g transform="translate(-90 -63)">
+            <ellipse cx="90" cy="76" rx="92" ry="4" fill="rgba(0,0,0,.45)"/>
+
+            <!-- faisceau de phare (large, devant le véhicule) -->
+            <path d="M 180 36 L 222 28 L 222 50 L 180 42 Z" fill="#FFE9A8" opacity="0.42"/>
+
+            <!-- carrosserie principale (silhouette Sprinter, blanche, avec arches de roues) -->
+            <path d="M 4 32 L 4 14 Q 4 4 14 4 L 122 4 Q 128 4 128 10 L 128 18 L 140 18 Q 144 18 146 21 L 158 32 L 174 32 Q 180 32 180 38 L 180 56 Q 180 60 176 60 L 164 60 Q 164 46 150 46 Q 136 46 136 60 L 44 60 Q 44 46 30 46 Q 16 46 16 60 L 8 60 Q 4 60 4 56 Z" fill="#fff" stroke="#0E1A38" stroke-width="0.7"/>
+
+            <!-- bande bleue accent sur le flanc -->
+            <rect x="6" y="38" width="120" height="4" fill="#0A47C2"/>
+
+            <!-- EXPRESS LIVRAISON sur 2 lignes, bien centré dans le panneau cargo -->
+            <text x="66" y="22" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="700" fill="#0A47C2" letter-spacing="0.4">EXPRESS</text>
+            <text x="66" y="36" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="700" fill="#0A47C2" letter-spacing="0.4">LIVRAISON</text>
+            <text x="66" y="54" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="5" fill="#0A47C2" opacity="0.9" letter-spacing="0.3">873 200-7377</text>
+
+            <!-- portes arrière (double porte cargo) -->
+            <line x1="64" y1="4" x2="64" y2="36" stroke="#0E1A38" stroke-width="0.6" opacity="0.45"/>
+            <line x1="64" y1="44" x2="64" y2="60" stroke="#0E1A38" stroke-width="0.6" opacity="0.45"/>
+
+            <!-- séparation cargo / cabine -->
+            <line x1="128" y1="18" x2="128" y2="60" stroke="#0E1A38" stroke-width="0.6" opacity="0.5"/>
+
+            <!-- vitre latérale de la cabine (conducteur) -->
+            <rect x="132" y="22" width="13" height="11" rx="1" fill="#7BB4FF" opacity="0.92"/>
+
+            <!-- pare-brise -->
+            <path d="M 146 22 L 156 31 L 156 33 L 146 33 Z" fill="#7BB4FF" opacity="0.92"/>
+
+            <!-- miroir latéral -->
+            <rect x="145" y="19" width="3" height="3" fill="#0E1A38" opacity="0.75"/>
+
+            <!-- phare avant + calandre -->
+            <rect x="172" y="34" width="6" height="5" rx="1" fill="#FFE066"/>
+            <rect x="172" y="42" width="6" height="2" fill="#0E1A38" opacity="0.55"/>
+
+            <!-- feu arrière -->
+            <rect x="4" y="34" width="4" height="6" rx="1" fill="#FF5C7A"/>
+
+            <!-- pare-chocs -->
+            <rect x="174" y="54" width="6" height="6" rx="1" fill="#0A39A0"/>
+            <rect x="4" y="54" width="6" height="6" rx="1" fill="#0A39A0"/>
+
+            <!-- roues -->
+            <circle cx="30" cy="60" r="11" fill="#0E1A38"/>
+            <circle cx="30" cy="60" r="6" fill="#3A5BD0"/>
+            <circle cx="30" cy="60" r="2" fill="#9CE7FF"/>
+            <circle cx="150" cy="60" r="11" fill="#0E1A38"/>
+            <circle cx="150" cy="60" r="6" fill="#3A5BD0"/>
+            <circle cx="150" cy="60" r="2" fill="#9CE7FF"/>
           </g>
         </g>
         <path id="rb-route-anim" d="M 170 220 Q 380 200 540 220 T 1000 220 T 1430 220" fill="none" stroke="none"/>
