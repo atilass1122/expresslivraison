@@ -8,6 +8,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FloatingCTA from '../components/FloatingCTA.astro';
 import { site } from '../config/site';
+import { ui, ROUTES, type Lang } from '../i18n/ui';
+import { useTranslations, getLangFromUrl } from '../i18n/utils';
 
 interface Props {
   title?: string;
@@ -16,19 +18,37 @@ interface Props {
   ogImage?: string;
   noindex?: boolean;
   bodyClass?: string;
+  lang?: Lang;
+  routeKey?: keyof typeof ROUTES['fr'];
 }
 
+const detected = getLangFromUrl(Astro.url);
 const {
   title,
-  description = site.description,
+  description,
   canonical,
   ogImage = '/images/og-image.jpg',
   noindex = false,
   bodyClass = '',
+  lang = detected,
+  routeKey,
 } = Astro.props;
 
-const pageTitle = title ? `${title} | ${site.name}` : `${site.name} · ${site.tagline}`;
+const t = useTranslations(lang);
+const localeStrings = ui[lang];
+
+const tagline =
+  lang === 'en'
+    ? 'Fast local delivery in Sherbrooke'
+    : 'Livraison locale rapide à Sherbrooke';
+
+const pageTitle = title ? `${title} | ${site.name}` : `${site.name} · ${tagline}`;
+const pageDescription = description || t('siteDescription');
 const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).toString();
+
+// hreflang : si routeKey fourni, on génère les deux URLs ; sinon fallback canonical.
+const frUrl = routeKey ? new URL(ROUTES.fr[routeKey], Astro.site).toString() : canonicalURL;
+const enUrl = routeKey ? new URL(ROUTES.en[routeKey], Astro.site).toString() : canonicalURL;
 
 const openingHours = [
   {
@@ -46,7 +66,7 @@ const openingHours = [
 ];
 
 // Données structurées : LocalBusiness (signal pack local) + WebSite.
-const structuredData = [
+const structuredData: any[] = [
   {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -74,13 +94,85 @@ const structuredData = [
     '@type': 'WebSite',
     url: site.url,
     name: site.name,
-    inLanguage: 'fr-CA',
+    inLanguage: localeStrings.htmlLang,
   },
 ];
+
+// BreadcrumbList — uniquement sur les pages internes (pas la home), pour aider
+// Google à afficher un fil d'Ariane dans les résultats de recherche.
+const crumbLabels: Record<typeof routeKey & string, { fr: string; en: string }> = {
+  home: { fr: 'Accueil', en: 'Home' },
+  services: { fr: 'Services', en: 'Services' },
+  business: { fr: 'Entreprises', en: 'Business' },
+  info: { fr: 'Informations', en: 'Info' },
+  contact: { fr: 'Nous joindre', en: 'Contact' },
+};
+if (routeKey && routeKey !== 'home') {
+  const homeLabel = crumbLabels.home[lang];
+  const pageLabel = crumbLabels[routeKey][lang];
+  structuredData.push({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: homeLabel,
+        item: new URL(ROUTES[lang].home, site.url).toString(),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: pageLabel,
+        item: new URL(ROUTES[lang][routeKey], site.url).toString(),
+      },
+    ],
+  });
+}
+
+// Chaînes injectées dans le script client via define:vars.
+const jsI18n = {
+  statusOpenFmt: localeStrings.statusOpenFmt,
+  statusClosedFmt: localeStrings.statusClosedFmt,
+  formRequired: localeStrings.formRequired,
+  formPhoneInvalid: localeStrings.formPhoneInvalid,
+  formFixErrors: localeStrings.formFixErrors,
+  formFillRequired: localeStrings.formFillRequired,
+  formSubmitting: localeStrings.formSubmitting,
+  formOrderOk: localeStrings.formOrderOk,
+  formQuoteOk: localeStrings.formQuoteOk,
+  formContactOk: localeStrings.formContactOk,
+  formSubmitError: localeStrings.formSubmitError,
+  formCaptchaRequired: localeStrings.formCaptchaRequired,
+  emailOrderSubject: localeStrings.emailOrderSubject,
+  emailOrderTitle: localeStrings.emailOrderTitle,
+  emailLabelName: localeStrings.emailLabelName,
+  emailLabelPhone: localeStrings.emailLabelPhone,
+  emailLabelAddress: localeStrings.emailLabelAddress,
+  emailLabelZone: localeStrings.emailLabelZone,
+  emailLabelOrderList: localeStrings.emailLabelOrderList,
+  emailLabelAgeConsent: localeStrings.emailLabelAgeConsent,
+  emailValYes: localeStrings.emailValYes,
+  emailValNoneRequired: localeStrings.emailValNoneRequired,
+  emailLabelNotes: localeStrings.emailLabelNotes,
+  emailQuoteSubject: localeStrings.emailQuoteSubject,
+  emailQuoteTitle: localeStrings.emailQuoteTitle,
+  emailLabelCompany: localeStrings.emailLabelCompany,
+  emailLabelContact: localeStrings.emailLabelContact,
+  emailLabelEmail: localeStrings.emailLabelEmail,
+  emailLabelNeed: localeStrings.emailLabelNeed,
+  emailLabelVolume: localeStrings.emailLabelVolume,
+  emailLabelDetails: localeStrings.emailLabelDetails,
+  emailContactSubjectPrefix: localeStrings.emailContactSubjectPrefix,
+  emailContactSubjectDefault: localeStrings.emailContactSubjectDefault,
+  emailContactTitle: localeStrings.emailContactTitle,
+  emailLabelSubject: localeStrings.emailLabelSubject,
+  emailLabelMessage: localeStrings.emailLabelMessage,
+};
 ---
 
 <!doctype html>
-<html lang="fr-CA">
+<html lang={localeStrings.htmlLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -90,12 +182,17 @@ const structuredData = [
     <meta name="google-site-verification" content="4D9GA4loEMITF5iKhiHEPW86SaegTsZ-Ko-MLyYHGu4" />
 
     <title>{pageTitle}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={pageDescription} />
     <link rel="canonical" href={canonicalURL} />
     {noindex
       ? <meta name="robots" content="noindex, nofollow" />
       : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     }
+
+    <!-- hreflang alternates -->
+    <link rel="alternate" hreflang="fr-CA" href={frUrl} />
+    <link rel="alternate" hreflang="en-CA" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={frUrl} />
 
     <meta name="theme-color" content="#0A47C2" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -106,10 +203,11 @@ const structuredData = [
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="fr_CA" />
+    <meta property="og:locale" content={localeStrings.ogLocale} />
+    <meta property="og:locale:alternate" content={localeStrings.ogLocaleAlternate} />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={pageDescription} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={new URL(ogImage, Astro.site).toString()} />
     <meta property="og:image:width" content="1200" />
@@ -119,7 +217,7 @@ const structuredData = [
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={new URL(ogImage, Astro.site).toString()} />
 
     <!-- Polices auto-hébergées via @fontsource-variable (importées dans le frontmatter). -->
@@ -128,23 +226,23 @@ const structuredData = [
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body class={bodyClass}>
-    <a href="#main" class="sr-only">Aller au contenu principal</a>
-    <Header />
+    <a href="#main" class="sr-only">{t('skipToContent')}</a>
+    <Header lang={lang} routeKey={routeKey} />
     <main id="main">
       <slot />
     </main>
-    <Footer />
-    <FloatingCTA />
+    <Footer lang={lang} />
+    <FloatingCTA lang={lang} />
 
-    <script>
+    <script define:vars={{ I18N: jsI18n, LANG: lang }}>
       // Express Livraison — comportements partagés :
       // nav mobile, révélation au défilement, statut ouvert/fermé en direct,
       // formatage du téléphone (CA) et validation des formulaires.
       (function () {
         const LS = { theme: 'el2.theme', density: 'el2.density' };
-        const DEFAULTS: Record<string, string> = { theme: 'clair', density: 'normal' };
-        const read = (k: string) => {
-          try { return localStorage.getItem(LS[k as keyof typeof LS]) || DEFAULTS[k]; }
+        const DEFAULTS = { theme: 'clair', density: 'normal' };
+        const read = (k) => {
+          try { return localStorage.getItem(LS[k]) || DEFAULTS[k]; }
           catch { return DEFAULTS[k]; }
         };
 
@@ -157,7 +255,7 @@ const structuredData = [
 
         // ---------- mobile nav ----------
         document.addEventListener('click', (e) => {
-          const target = e.target as HTMLElement;
+          const target = e.target;
           if (target.closest('[data-nav-toggle]')) {
             document.body.classList.toggle('nav-open');
             return;
@@ -185,6 +283,15 @@ const structuredData = [
         }
 
         // ---------- live status (open/closed) ----------
+        function fmtHour(h) {
+          // FR : '21 h' ; EN : '9 PM'
+          if (LANG === 'en') {
+            const period = h >= 12 ? 'PM' : 'AM';
+            const display = h === 0 ? 12 : h > 12 ? h - 12 : h;
+            return display + ' ' + period;
+          }
+          return h + ' h';
+        }
         function updateStatus() {
           const els = document.querySelectorAll('[data-status]');
           if (!els.length) return;
@@ -196,10 +303,10 @@ const structuredData = [
           const isOpen = now >= open && now < close;
           els.forEach((el) => {
             if (isOpen) {
-              el.textContent = 'Ouvert · ferme à ' + Math.floor(close / 60) + ' h';
+              el.textContent = I18N.statusOpenFmt.replace('{h}', fmtHour(Math.floor(close / 60)));
               el.classList.add('is-open');
             } else {
-              el.textContent = 'Fermé · ouvre à ' + Math.floor(open / 60) + ' h';
+              el.textContent = I18N.statusClosedFmt.replace('{h}', fmtHour(Math.floor(open / 60)));
               el.classList.remove('is-open');
             }
           });
@@ -208,164 +315,274 @@ const structuredData = [
         setInterval(updateStatus, 60000);
 
         // ---------- phone formatting (CA) ----------
-        function validatePhoneCA(v: string) {
+        function validatePhoneCA(v) {
           const digits = v.replace(/\D/g, '');
           if (digits.length === 11 && digits[0] === '1') return digits;
           if (digits.length === 10) return '1' + digits;
           return null;
         }
-        function formatPhoneCA(v: string) {
+        function formatPhoneCA(v) {
           const d = v.replace(/\D/g, '').slice(0, 10);
           if (d.length === 0) return '';
           if (d.length <= 3) return '(' + d;
           if (d.length <= 6) return '(' + d.slice(0, 3) + ') ' + d.slice(3);
           return '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6);
         }
-        document.querySelectorAll<HTMLInputElement>('input[data-phone]').forEach((inp) => {
+        document.querySelectorAll('input[data-phone]').forEach((inp) => {
           inp.addEventListener('input', () => { inp.value = formatPhoneCA(inp.value); });
         });
 
-        // ---------- order form validation ----------
-        document.querySelectorAll<HTMLFormElement>('[data-form="order"]').forEach((form) => {
-          form.addEventListener('submit', (e) => {
+        // ---------- Web3Forms submission ----------
+        // Clés d'accès — une par type de formulaire, mêmes clés FR + EN.
+        // Domaine autorisé : géré dans le tableau de bord web3forms.com.
+        const W3F_KEYS = {
+          order:   'cd7f730d-bd41-4803-bab9-6d8479239bee',
+          quote:   '1da267b8-b9a9-48f9-85f6-c329a9589ce9',
+          contact: '156dd479-1675-4caa-b72b-673799d70a40',
+        };
+        const W3F_ENDPOINT = 'https://api.web3forms.com/submit';
+
+        // hCaptcha — clé par défaut fournie par Web3Forms sur les plans gratuits.
+        // Pour utiliser ta propre clé : créer un compte sur hcaptcha.com et remplacer.
+        const HCAPTCHA_SITE_KEY = '50b2fe65-b00b-4b9e-ad62-3ba471098be2';
+
+        // Honeypot anti-spam : champ caché que les bots remplissent souvent.
+        // Web3Forms ignore les envois où `botcheck` est non vide.
+        function ensureHoneypot(form) {
+          if (form.querySelector('input[name="botcheck"]')) return;
+          const h = document.createElement('input');
+          h.type = 'checkbox';
+          h.name = 'botcheck';
+          h.tabIndex = -1;
+          h.setAttribute('aria-hidden', 'true');
+          h.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;';
+          form.appendChild(h);
+        }
+
+        async function submitWeb3Forms(form, accessKey, subject, body, okHtml) {
+          const status = form.querySelector('[data-form-status]');
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
+
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = I18N.formSubmitting;
+          }
+          if (status) {
+            status.textContent = I18N.formSubmitting;
+            status.className = 'form-status';
+          }
+
+          const payload = new FormData();
+          payload.append('access_key', accessKey);
+          payload.append('subject', subject);
+          payload.append('from_name', form.querySelector('[name="name"]')?.value || 'Express Livraison');
+          const emailField = form.querySelector('[name="email"]');
+          if (emailField && emailField.value) payload.append('replyto', emailField.value);
+          payload.append('message', body);
+          // Copier également chaque champ utile pour qu'ils apparaissent dans le tableau de bord.
+          new FormData(form).forEach((v, k) => {
+            if (k === 'access_key' || k === 'message' || k === 'subject' || k === 'from_name' || k === 'replyto') return;
+            payload.append(k, v);
+          });
+
+          try {
+            const res = await fetch(W3F_ENDPOINT, { method: 'POST', body: payload });
+            const data = await res.json().catch(() => ({}));
+            if (res.ok && data.success) {
+              if (status) {
+                status.innerHTML = okHtml;
+                status.className = 'form-status form-status--ok';
+              }
+              form.reset();
+              if (submitBtn) submitBtn.innerHTML = originalBtnText;
+              // Réinitialiser le widget hCaptcha pour qu'un nouvel envoi soit possible.
+              if (window.hcaptcha && typeof window.hcaptcha.reset === 'function') {
+                try { window.hcaptcha.reset(); } catch (e) { /* noop */ }
+              }
+              // Garder le bouton désactivé brièvement pour éviter les doubles envois.
+              setTimeout(() => { if (submitBtn) submitBtn.disabled = false; }, 1500);
+              return true;
+            }
+            throw new Error((data && data.message) || ('HTTP ' + res.status));
+          } catch (err) {
+            if (status) {
+              status.innerHTML = I18N.formSubmitError;
+              status.className = 'form-status form-status--err';
+            }
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalBtnText;
+            }
+            return false;
+          }
+        }
+
+        // Injecter le honeypot + le widget hCaptcha dans tous les formulaires gérés.
+        const managedForms = document.querySelectorAll('[data-form="order"], [data-form="quote"], [data-form="contact"]');
+        managedForms.forEach((form) => {
+          ensureHoneypot(form);
+          // hCaptcha : widget visible inséré juste avant le bloc submit.
+          if (!form.querySelector('.h-captcha')) {
+            const submitWrap = form.querySelector('.order-form__submit, .quote-form__submit, .contact-form__submit');
+            const cap = document.createElement('div');
+            cap.className = 'h-captcha form-captcha';
+            cap.setAttribute('data-sitekey', HCAPTCHA_SITE_KEY);
+            if (submitWrap && submitWrap.parentNode) {
+              submitWrap.parentNode.insertBefore(cap, submitWrap);
+            } else {
+              form.appendChild(cap);
+            }
+          }
+        });
+        // Charger l'API hCaptcha une seule fois, si la page contient au moins un formulaire.
+        if (managedForms.length && !document.querySelector('script[data-hcaptcha-api]')) {
+          const s = document.createElement('script');
+          s.src = 'https://js.hcaptcha.com/1/api.js';
+          s.async = true;
+          s.defer = true;
+          s.setAttribute('data-hcaptcha-api', '');
+          document.head.appendChild(s);
+        }
+
+        // Vérifie que l'utilisateur a complété le captcha avant l'envoi.
+        function checkCaptcha(form) {
+          const tokenInput = form.querySelector('[name="h-captcha-response"]');
+          const token = tokenInput && tokenInput.value && tokenInput.value.trim();
+          if (token) return true;
+          const status = form.querySelector('[data-form-status]');
+          if (status) {
+            status.textContent = I18N.formCaptchaRequired;
+            status.className = 'form-status form-status--err';
+          }
+          return false;
+        }
+
+        // ---------- order form ----------
+        document.querySelectorAll('[data-form="order"]').forEach((form) => {
+          form.addEventListener('submit', async (e) => {
             e.preventDefault();
             let ok = true;
-            form.querySelectorAll<HTMLInputElement>('[required]').forEach((inp) => {
+            form.querySelectorAll('[required]').forEach((inp) => {
               const wrap = inp.closest('.field');
               const errEl = wrap ? wrap.querySelector('.field__error') : null;
-              wrap?.classList.remove('field--error');
+              wrap && wrap.classList.remove('field--error');
               if (inp.type === 'checkbox') {
-                if (!inp.checked) { wrap?.classList.add('field--error'); ok = false; }
+                if (!inp.checked) { wrap && wrap.classList.add('field--error'); ok = false; }
                 return;
               }
               if (!inp.value.trim()) {
-                wrap?.classList.add('field--error');
-                if (errEl) errEl.textContent = 'Champ requis';
+                wrap && wrap.classList.add('field--error');
+                if (errEl) errEl.textContent = I18N.formRequired;
                 ok = false;
                 return;
               }
               if (inp.dataset.phone) {
                 if (!validatePhoneCA(inp.value)) {
-                  wrap?.classList.add('field--error');
-                  if (errEl) errEl.textContent = 'Numéro canadien à 10 chiffres requis';
+                  wrap && wrap.classList.add('field--error');
+                  if (errEl) errEl.textContent = I18N.formPhoneInvalid;
                   ok = false;
                 }
               }
             });
 
-            const orderField = form.querySelector<HTMLTextAreaElement>('[name="order"]');
-            const ageBox = form.querySelector<HTMLInputElement>('[name="age_consent"]');
+            const orderField = form.querySelector('[name="order"]');
+            const ageBox = form.querySelector('[name="age_consent"]');
             if (ageBox && orderField) {
-              const mentions18 = /(biere|bière|alcool|vodka|gin|rhum|loto|loter|vin|spiritu)/i.test(orderField.value);
+              const mentions18 = /(biere|bière|alcool|vodka|gin|rhum|loto|loter|vin|spiritu|beer|wine|liquor|spirit|lottery)/i.test(orderField.value);
               if (mentions18 && !ageBox.checked) {
-                ageBox.closest('.checkbox')?.classList.add('field--error');
+                const wrap = ageBox.closest('.checkbox');
+                wrap && wrap.classList.add('field--error');
                 ok = false;
               }
             }
 
-            const status = form.querySelector('[data-form-status]');
             if (!ok) {
+              const status = form.querySelector('[data-form-status]');
               if (status) {
-                status.textContent = 'Merci de corriger les champs en rouge.';
+                status.textContent = I18N.formFixErrors;
                 status.className = 'form-status form-status--err';
               }
               return;
             }
+            if (!checkCaptcha(form)) return;
 
             const fd = new FormData(form);
-            const subject = 'Nouvelle commande · Express Livraison';
             const body =
-              'NOUVELLE COMMANDE\n' +
+              I18N.emailOrderTitle + '\n' +
               '────────────────────────\n' +
-              'Nom         : ' + (fd.get('name') || '') + '\n' +
-              'Téléphone   : ' + (fd.get('phone') || '') + '\n' +
-              'Adresse     : ' + (fd.get('address') || '') + '\n' +
-              'Secteur     : ' + (fd.get('zone') || '') + '\n' +
-              "\nLISTE D'ARTICLES\n" +
+              I18N.emailLabelName + '         : ' + (fd.get('name') || '') + '\n' +
+              I18N.emailLabelPhone + '   : ' + (fd.get('phone') || '') + '\n' +
+              I18N.emailLabelAddress + '     : ' + (fd.get('address') || '') + '\n' +
+              I18N.emailLabelZone + '     : ' + (fd.get('zone') || '') + '\n' +
+              '\n' + I18N.emailLabelOrderList + '\n' +
               '────────────────────────\n' +
               (fd.get('order') || '') + '\n' +
-              '\nConsentement 18+ : ' + (fd.get('age_consent') ? 'Oui' : 'Non requis') + '\n' +
-              'Notes : ' + (fd.get('notes') || '') + '\n';
+              '\n' + I18N.emailLabelAgeConsent + ' : ' + (fd.get('age_consent') ? I18N.emailValYes : I18N.emailValNoneRequired) + '\n' +
+              I18N.emailLabelNotes + ' : ' + (fd.get('notes') || '') + '\n';
 
-            const mailto = 'mailto:info@expresslivraison.ca?subject=' +
-              encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-            if (status) {
-              status.innerHTML = "✓ Formulaire validé. Votre client courriel s'ouvre. Ou appelez le <a href=\"tel:+18732007377\"><strong>873 200-7377</strong></a> directement.";
-              status.className = 'form-status form-status--ok';
-            }
-            window.location.href = mailto;
+            await submitWeb3Forms(form, W3F_KEYS.order, I18N.emailOrderSubject, body, I18N.formOrderOk);
           });
         });
 
         // ---------- B2B quote form ----------
-        document.querySelectorAll<HTMLFormElement>('[data-form="quote"]').forEach((form) => {
-          form.addEventListener('submit', (e) => {
+        document.querySelectorAll('[data-form="quote"]').forEach((form) => {
+          form.addEventListener('submit', async (e) => {
             e.preventDefault();
             let ok = true;
-            form.querySelectorAll<HTMLInputElement>('[required]').forEach((inp) => {
+            form.querySelectorAll('[required]').forEach((inp) => {
               const wrap = inp.closest('.field');
-              wrap?.classList.remove('field--error');
-              if (!inp.value.trim()) { wrap?.classList.add('field--error'); ok = false; }
+              wrap && wrap.classList.remove('field--error');
+              if (!inp.value.trim()) { wrap && wrap.classList.add('field--error'); ok = false; }
             });
-            const status = form.querySelector('[data-form-status]');
             if (!ok) {
-              if (status) { status.textContent = 'Merci de remplir les champs requis.'; status.className = 'form-status form-status--err'; }
+              const status = form.querySelector('[data-form-status]');
+              if (status) { status.textContent = I18N.formFillRequired; status.className = 'form-status form-status--err'; }
               return;
             }
+            if (!checkCaptcha(form)) return;
             const fd = new FormData(form);
             const body =
-              'DEMANDE DE SOUMISSION B2B\n' +
+              I18N.emailQuoteTitle + '\n' +
               '────────────────────────\n' +
-              'Entreprise  : ' + (fd.get('company') || '') + '\n' +
-              'Contact     : ' + (fd.get('name') || '') + '\n' +
-              'Téléphone   : ' + (fd.get('phone') || '') + '\n' +
-              'Courriel    : ' + (fd.get('email') || '') + '\n' +
-              'Besoin      : ' + (fd.get('needs') || '') + '\n' +
-              'Volume      : ' + (fd.get('volume') || '') + '\n' +
-              'Détails     :\n' + (fd.get('details') || '') + '\n';
-            const mailto = 'mailto:info@expresslivraison.ca?subject=' +
-              encodeURIComponent('Demande soumission B2B · Express Livraison') +
-              '&body=' + encodeURIComponent(body);
-            if (status) {
-              status.innerHTML = "✓ Demande validée. Votre client courriel s'ouvre. Nous répondons dans les 24 h ouvrables.";
-              status.className = 'form-status form-status--ok';
-            }
-            window.location.href = mailto;
+              I18N.emailLabelCompany + '  : ' + (fd.get('company') || '') + '\n' +
+              I18N.emailLabelContact + '     : ' + (fd.get('name') || '') + '\n' +
+              I18N.emailLabelPhone + '   : ' + (fd.get('phone') || '') + '\n' +
+              I18N.emailLabelEmail + '    : ' + (fd.get('email') || '') + '\n' +
+              I18N.emailLabelNeed + '      : ' + (fd.get('needs') || '') + '\n' +
+              I18N.emailLabelVolume + '      : ' + (fd.get('volume') || '') + '\n' +
+              I18N.emailLabelDetails + '     :\n' + (fd.get('details') || '') + '\n';
+            await submitWeb3Forms(form, W3F_KEYS.quote, I18N.emailQuoteSubject, body, I18N.formQuoteOk);
           });
         });
 
         // ---------- general contact form ----------
-        document.querySelectorAll<HTMLFormElement>('[data-form="contact"]').forEach((form) => {
-          form.addEventListener('submit', (e) => {
+        document.querySelectorAll('[data-form="contact"]').forEach((form) => {
+          form.addEventListener('submit', async (e) => {
             e.preventDefault();
             let ok = true;
-            form.querySelectorAll<HTMLInputElement>('[required]').forEach((inp) => {
+            form.querySelectorAll('[required]').forEach((inp) => {
               const wrap = inp.closest('.field');
-              wrap?.classList.remove('field--error');
-              if (!inp.value.trim()) { wrap?.classList.add('field--error'); ok = false; }
+              wrap && wrap.classList.remove('field--error');
+              if (!inp.value.trim()) { wrap && wrap.classList.add('field--error'); ok = false; }
             });
-            const status = form.querySelector('[data-form-status]');
             if (!ok) {
-              if (status) { status.textContent = 'Merci de remplir les champs requis.'; status.className = 'form-status form-status--err'; }
+              const status = form.querySelector('[data-form-status]');
+              if (status) { status.textContent = I18N.formFillRequired; status.className = 'form-status form-status--err'; }
               return;
             }
+            if (!checkCaptcha(form)) return;
             const fd = new FormData(form);
             const body =
-              'MESSAGE · SITE WEB\n' +
+              I18N.emailContactTitle + '\n' +
               '────────────────────────\n' +
-              'Nom       : ' + (fd.get('name') || '') + '\n' +
-              'Courriel  : ' + (fd.get('email') || '') + '\n' +
-              'Téléphone : ' + (fd.get('phone') || '') + '\n' +
-              'Sujet     : ' + (fd.get('subject') || '') + '\n' +
-              '\nMessage   :\n' + (fd.get('message') || '') + '\n';
-            const mailto = 'mailto:info@expresslivraison.ca?subject=' +
-              encodeURIComponent('Message site web · ' + (fd.get('subject') || 'Contact')) +
-              '&body=' + encodeURIComponent(body);
-            if (status) {
-              status.innerHTML = "✓ Message validé. Votre client courriel s'ouvre. Réponse sous 24 h ouvrables.";
-              status.className = 'form-status form-status--ok';
-            }
-            window.location.href = mailto;
+              I18N.emailLabelName + '       : ' + (fd.get('name') || '') + '\n' +
+              I18N.emailLabelEmail + '  : ' + (fd.get('email') || '') + '\n' +
+              I18N.emailLabelPhone + ' : ' + (fd.get('phone') || '') + '\n' +
+              I18N.emailLabelSubject + '     : ' + (fd.get('subject') || '') + '\n' +
+              '\n' + I18N.emailLabelMessage + '   :\n' + (fd.get('message') || '') + '\n';
+            const subject = I18N.emailContactSubjectPrefix + (fd.get('subject') || I18N.emailContactSubjectDefault);
+            await submitWeb3Forms(form, W3F_KEYS.contact, subject, body, I18N.formContactOk);
           });
         });
       })();

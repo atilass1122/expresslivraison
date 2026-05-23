@@ -1,18 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout
-  title="Livraison de dépanneur à domicile · Sherbrooke"
-  description="Livraison à domicile à Sherbrooke : dépanneur, restaurants, colis et essentiels. Tarif fixe 8 $/2 km + 1 $/km, 7 j/7. Appelez le 873 200-7377."
+  title="Local convenience store delivery · Sherbrooke"
+  description="Home delivery in Sherbrooke: convenience store, restaurants, parcels and essentials. Flat fee $8 / 2 km + $1/km, 7 days a week. Call 873 200-7377."
   bodyClass="page-home"
-  lang="fr"
+  lang="en"
   routeKey="home"
 >
   <!-- ========== ROUTE BANNER ========== -->
-  <section class="route-banner" aria-label="Service de livraison en cours">
+  <section class="route-banner" aria-label="Delivery service in progress">
     <div class="route-banner__wrap">
-      <svg class="route-banner__svg" viewBox="0 0 1600 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Voiture de livraison Express Livraison en route vers le client à Sherbrooke">
+      <svg class="route-banner__svg" viewBox="0 0 1600 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Express Livraison delivery van on the way to the customer in Sherbrooke">
         <defs>
           <linearGradient id="rb-sky" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#0B1B3F"/>
@@ -76,7 +76,7 @@ import Layout from '../layouts/Layout.astro';
         <g transform="translate(120 130)" filter="url(#rb-shadow)">
           <rect x="0" y="0" width="100" height="90" rx="4" fill="#1A2C5E" stroke="#4C75DA" stroke-width="1"/>
           <rect x="0" y="0" width="100" height="22" fill="#0A47C2"/>
-          <text x="50" y="15" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="10" font-weight="600" fill="#fff" letter-spacing="1.5">DÉPANNEUR</text>
+          <text x="50" y="15" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="10" font-weight="600" fill="#fff" letter-spacing="1.5">STORE</text>
           <rect x="12" y="32" width="22" height="28" fill="#4C75DA" opacity=".4"/>
           <rect x="40" y="32" width="22" height="28" fill="#4C75DA" opacity=".4"/>
           <rect x="68" y="32" width="22" height="28" fill="#4C75DA" opacity=".4"/>
@@ -119,49 +119,23 @@ import Layout from '../layouts/Layout.astro';
           </animateMotion>
           <g transform="translate(-90 -63)">
             <ellipse cx="90" cy="76" rx="92" ry="4" fill="rgba(0,0,0,.45)"/>
-
-            <!-- faisceau de phare (large, devant le véhicule) -->
             <path d="M 180 36 L 222 28 L 222 50 L 180 42 Z" fill="#FFE9A8" opacity="0.42"/>
-
-            <!-- carrosserie principale (silhouette Sprinter, blanche, avec arches de roues) -->
             <path d="M 4 32 L 4 14 Q 4 4 14 4 L 122 4 Q 128 4 128 10 L 128 18 L 140 18 Q 144 18 146 21 L 158 32 L 174 32 Q 180 32 180 38 L 180 56 Q 180 60 176 60 L 164 60 Q 164 46 150 46 Q 136 46 136 60 L 44 60 Q 44 46 30 46 Q 16 46 16 60 L 8 60 Q 4 60 4 56 Z" fill="#fff" stroke="#0E1A38" stroke-width="0.7"/>
-
-            <!-- bande bleue accent sur le flanc -->
             <rect x="6" y="38" width="120" height="4" fill="#0A47C2"/>
-
-            <!-- EXPRESS LIVRAISON sur 2 lignes, bien centré dans le panneau cargo -->
             <text x="66" y="22" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="700" fill="#0A47C2" letter-spacing="0.4">EXPRESS</text>
             <text x="66" y="36" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="700" fill="#0A47C2" letter-spacing="0.4">LIVRAISON</text>
             <text x="66" y="54" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="5" fill="#0A47C2" opacity="0.9" letter-spacing="0.3">873 200-7377</text>
-
-            <!-- portes arrière (double porte cargo) -->
             <line x1="64" y1="4" x2="64" y2="36" stroke="#0E1A38" stroke-width="0.6" opacity="0.45"/>
             <line x1="64" y1="44" x2="64" y2="60" stroke="#0E1A38" stroke-width="0.6" opacity="0.45"/>
-
-            <!-- séparation cargo / cabine -->
             <line x1="128" y1="18" x2="128" y2="60" stroke="#0E1A38" stroke-width="0.6" opacity="0.5"/>
-
-            <!-- vitre latérale de la cabine (conducteur) -->
             <rect x="132" y="22" width="13" height="11" rx="1" fill="#7BB4FF" opacity="0.92"/>
-
-            <!-- pare-brise -->
             <path d="M 146 22 L 156 31 L 156 33 L 146 33 Z" fill="#7BB4FF" opacity="0.92"/>
-
-            <!-- miroir latéral -->
             <rect x="145" y="19" width="3" height="3" fill="#0E1A38" opacity="0.75"/>
-
-            <!-- phare avant + calandre -->
             <rect x="172" y="34" width="6" height="5" rx="1" fill="#FFE066"/>
             <rect x="172" y="42" width="6" height="2" fill="#0E1A38" opacity="0.55"/>
-
-            <!-- feu arrière -->
             <rect x="4" y="34" width="4" height="6" rx="1" fill="#FF5C7A"/>
-
-            <!-- pare-chocs -->
             <rect x="174" y="54" width="6" height="6" rx="1" fill="#0A39A0"/>
             <rect x="4" y="54" width="6" height="6" rx="1" fill="#0A39A0"/>
-
-            <!-- roues -->
             <circle cx="30" cy="60" r="11" fill="#0E1A38"/>
             <circle cx="30" cy="60" r="6" fill="#3A5BD0"/>
             <circle cx="30" cy="60" r="2" fill="#9CE7FF"/>
@@ -176,21 +150,21 @@ import Layout from '../layouts/Layout.astro';
           <g transform="translate(380 100)">
             <rect x="-58" y="-18" width="116" height="36" rx="18" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
             <text y="-3" text-anchor="middle" fill="#8FAFFF" font-size="9">0–2 KM</text>
-            <text y="10" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="700">8 $</text>
+            <text y="10" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="700">$8</text>
           </g>
           <g transform="translate(680 90)">
             <rect x="-66" y="-18" width="132" height="36" rx="18" fill="rgba(74,255,184,.18)" stroke="#4AFFB8" stroke-width="1"/>
-            <text y="-3" text-anchor="middle" fill="#4AFFB8" font-size="9">PAR KM SUPP.</text>
-            <text y="10" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="700">+ 1 $</text>
+            <text y="-3" text-anchor="middle" fill="#4AFFB8" font-size="9">PER EXTRA KM</text>
+            <text y="10" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="700">+ $1</text>
           </g>
           <g transform="translate(1000 100)">
             <rect x="-62" y="-18" width="124" height="36" rx="18" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
-            <text y="-3" text-anchor="middle" fill="#8FAFFF" font-size="9">DÉLAI ESTIMÉ</text>
+            <text y="-3" text-anchor="middle" fill="#8FAFFF" font-size="9">EST. TIME</text>
             <text y="10" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="700">~ 25 MIN</text>
           </g>
           <g transform="translate(1260 90)">
             <rect x="-66" y="-18" width="132" height="36" rx="18" fill="rgba(10,71,194,.55)" stroke="#7BB4FF" stroke-width="1"/>
-            <text y="-3" text-anchor="middle" fill="#C7D9FF" font-size="9">RAYON MAX.</text>
+            <text y="-3" text-anchor="middle" fill="#C7D9FF" font-size="9">MAX RADIUS</text>
             <text y="10" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="700">0–9 KM</text>
           </g>
         </g>
@@ -201,11 +175,11 @@ import Layout from '../layouts/Layout.astro';
             <animate attributeName="r" values="6;14;6" dur="2s" repeatCount="indefinite"/>
             <animate attributeName="opacity" values="0.9;0;0.9" dur="2s" repeatCount="indefinite"/>
           </circle>
-          <text x="-14" y="4" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600" fill="#4AFFB8" letter-spacing="2">EN DIRECT</text>
+          <text x="-14" y="4" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600" fill="#4AFFB8" letter-spacing="2">LIVE</text>
         </g>
 
         <g transform="translate(60 36)" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2">
-          <text fill="#8FAFFF">SHERBROOKE · 7 J/7 · LUN–SAM 9–21 H · DIM 10–17 H</text>
+          <text fill="#8FAFFF">SHERBROOKE · 7 DAYS · MON–SAT 9 AM–9 PM · SUN 10 AM–5 PM</text>
         </g>
       </svg>
     </div>
@@ -216,77 +190,77 @@ import Layout from '../layouts/Layout.astro';
     <div class="container hero__grid">
       <div class="hero__copy">
         <div class="hero__meta">
-          <span class="pill pill--live"><span class="dot"></span><span data-status>Ouvert · ferme à 21 h</span></span>
-          <span class="pill pill--blue">⌖&nbsp; Sherbrooke · Rayon 0–9 km</span>
+          <span class="pill pill--live"><span class="dot"></span><span data-status>Open · closes at 9 PM</span></span>
+          <span class="pill pill--blue">⌖&nbsp; Sherbrooke · 0–9 km radius</span>
         </div>
         <h1 class="h-display">
-          Tout ce qui vous manque,<br/>livré en <span class="hero__highlight">moins de 30 min.</span>
+          Everything you're missing,<br/>delivered in <span class="hero__highlight">under 30 min.</span>
         </h1>
-        <p class="lead">Restaurants, dépanneur, petits colis, articles essentiels. Express Livraison va le chercher et l'apporte chez vous. Un appel, un formulaire. Tarif annoncé d'avance, paiement à la porte.</p>
+        <p class="lead">Restaurants, convenience store, small parcels, essentials. Express Livraison picks it up and brings it to your door. One call, one form. Price announced upfront, pay at the door.</p>
         <div class="hero__ctas">
           <a class="btn btn--primary btn--xl" href="tel:+18732007377">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Appeler · 873 200-7377
+            Call · 873 200-7377
           </a>
-          <a class="btn btn--xl" href="#commander">
-            Commander en ligne <span class="arr">↓</span>
+          <a class="btn btn--xl" href="#order">
+            Order online <span class="arr">↓</span>
           </a>
         </div>
       </div>
 
-      <aside class="hero__panel" aria-label="Panneau de répartition">
+      <aside class="hero__panel" aria-label="Dispatch panel">
         <div class="hero__panel-head">
           <span class="mono">DISPATCH · LIVE</span>
           <span class="hero__panel-pulse" aria-hidden="true"><span></span></span>
         </div>
         <div class="hero__panel-status">
           <div class="hero__panel-stat">
-            <div class="mono hero__panel-key">État du service</div>
-            <div class="hero__panel-val" data-status>Ouvert · ferme à 21 h</div>
+            <div class="mono hero__panel-key">Service status</div>
+            <div class="hero__panel-val" data-status>Open · closes at 9 PM</div>
           </div>
           <div class="hero__panel-grid">
             <div>
-              <div class="mono hero__panel-key">Zone</div>
+              <div class="mono hero__panel-key">Area</div>
               <div class="hero__panel-sub">Sherbrooke</div>
             </div>
             <div>
-              <div class="mono hero__panel-key">Délai moyen</div>
+              <div class="mono hero__panel-key">Avg. time</div>
               <div class="hero__panel-sub">~25 min</div>
             </div>
             <div>
-              <div class="mono hero__panel-key">Rayon</div>
+              <div class="mono hero__panel-key">Radius</div>
               <div class="hero__panel-sub">0–9 km</div>
             </div>
             <div>
-              <div class="mono hero__panel-key">Paiement</div>
-              <div class="hero__panel-sub">Square + Comptant</div>
+              <div class="mono hero__panel-key">Payment</div>
+              <div class="hero__panel-sub">Square + Cash</div>
             </div>
           </div>
         </div>
         <a class="hero__panel-cta" href="tel:+18732007377">
           <div>
-            <div class="mono">Composer maintenant</div>
+            <div class="mono">Dial now</div>
             <div class="hero__panel-num">873 200·7377</div>
           </div>
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
         <div class="hero__panel-foot">
-          <span class="mono">Lun–Sam · 9 h–21 h</span>
-          <span class="mono">Dim · 10 h–17 h</span>
+          <span class="mono">Mon–Sat · 9 AM–9 PM</span>
+          <span class="mono">Sun · 10 AM–5 PM</span>
         </div>
       </aside>
     </div>
   </section>
 
-  <!-- ========== TARIFICATION ========== -->
+  <!-- ========== PRICING ========== -->
   <section>
     <div class="container">
       <div class="section-head" data-reveal>
         <div>
-          <div class="kicker">Tarification</div>
-          <h2 class="h1" style="margin-top:16px;">Une seule formule.<br/>Calculée à la distance.</h2>
+          <div class="kicker">Pricing</div>
+          <h2 class="h1" style="margin-top:16px;">One formula.<br/>Calculated by distance.</h2>
         </div>
-        <p class="lead section-head__lead">Pas de zones, pas de paliers compliqués. <strong>8 $ pour 2 km</strong>, puis <strong>+1 $ par kilomètre supplémentaire</strong>. C'est tout. Articles facturés au prix du dépanneur.</p>
+        <p class="lead section-head__lead">No zones, no complicated tiers. <strong>$8 for 2 km</strong>, then <strong>+$1 for each extra kilometre</strong>. That's it. Items billed at convenience store price.</p>
       </div>
 
       <div class="formula" data-reveal>
@@ -295,8 +269,8 @@ import Layout from '../layouts/Layout.astro';
           <div class="formula__row">
             <div class="formula__val"><span>$</span>8</div>
             <div class="formula__txt">
-              <strong>Pour 2 km</strong>
-              <span>Forfait de départ minimum</span>
+              <strong>For 2 km</strong>
+              <span>Minimum starting fee</span>
             </div>
           </div>
         </div>
@@ -306,8 +280,8 @@ import Layout from '../layouts/Layout.astro';
           <div class="formula__row">
             <div class="formula__val"><span>$</span>1<span class="formula__unit">/km</span></div>
             <div class="formula__txt">
-              <strong>Par km supplémentaire</strong>
-              <span>Au-delà du forfait de base</span>
+              <strong>Per extra km</strong>
+              <span>Beyond the base rate</span>
             </div>
           </div>
         </div>
@@ -317,8 +291,8 @@ import Layout from '../layouts/Layout.astro';
           <div class="formula__row">
             <div class="formula__val"><span>$</span>15</div>
             <div class="formula__txt">
-              <strong>À 9 km (limite)</strong>
-              <span>Rayon maximum desservi</span>
+              <strong>At 9 km (limit)</strong>
+              <span>Maximum service radius</span>
             </div>
           </div>
         </div>
@@ -326,14 +300,14 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="examples" data-reveal>
         <div class="examples__head">
-          <span class="mono">Exemples · livraison seule</span>
-          <span class="mono">(prix des articles en sus)</span>
+          <span class="mono">Examples · delivery only</span>
+          <span class="mono">(item price extra)</span>
         </div>
         <div class="examples__grid">
           <div class="example">
             <div class="example__km mono">2 km</div>
             <div class="example__price"><span>$</span>8</div>
-            <div class="example__zone">Centre-ville</div>
+            <div class="example__zone">Downtown</div>
           </div>
           <div class="example">
             <div class="example__km mono">4 km</div>
@@ -343,7 +317,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="example example--feat">
             <div class="example__km mono">6 km</div>
             <div class="example__price"><span>$</span>12</div>
-            <div class="example__zone">Le plus demandé</div>
+            <div class="example__zone">Most popular</div>
           </div>
           <div class="example">
             <div class="example__km mono">8 km</div>
@@ -358,7 +332,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <p class="tarif__foot mono">* Distance calculée depuis le dépanneur. Taxes applicables sur les articles. Hors 9 km : appelez, on évalue.</p>
+      <p class="tarif__foot mono">* Distance calculated from the store. Taxes applicable on items. Beyond 9 km: call us, we'll assess.</p>
     </div>
   </section>
 
@@ -367,48 +341,48 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="section-head" data-reveal>
         <div>
-          <div class="kicker">Nos services</div>
-          <h2 class="h1" style="margin-top:16px;">Quatre façons<br/>de vous dépanner.</h2>
+          <div class="kicker">Our services</div>
+          <h2 class="h1" style="margin-top:16px;">Four ways<br/>we can help.</h2>
         </div>
-        <p class="lead section-head__lead">On ne se limite pas au dépanneur. Petit colis, essentiels, courses rapides : tout ce qui se livre dans un rayon de 9 km, on s'en occupe. <strong>Repas de restaurant sur demande</strong> (appelez-nous).</p>
+        <p class="lead section-head__lead">We don't just do convenience store runs. Small parcels, essentials, quick errands: anything that can be delivered within 9 km, we'll handle. <strong>Restaurant meals on request</strong> (call us).</p>
       </div>
       <div class="services services--4">
-        <a href="/services#depanneur" class="service" data-reveal>
+        <a href="/en/services#store" class="service" data-reveal>
           <div class="service__icon" aria-hidden="true">
             <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h24l-1.5 14a2 2 0 0 1-2 1.8H7.5a2 2 0 0 1-2-1.8z"/><path d="M9 12V8a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4"/></svg>
           </div>
           <div class="service__num mono">01</div>
-          <h3 class="h3">Dépanneur</h3>
-          <p>Aliments, breuvages, articles de toilette, loterie. Quatre familles, centaines de produits.</p>
-          <span class="pill pill--age">Alcool · Loterie 18 +</span>
-          <span class="service__more">Voir détails <span class="arr">→</span></span>
+          <h3 class="h3">Convenience store</h3>
+          <p>Food, drinks, toiletries, lottery. Four families, hundreds of products.</p>
+          <span class="pill pill--age">Alcohol · Lottery 18 +</span>
+          <span class="service__more">See details <span class="arr">→</span></span>
         </a>
-        <a href="/services#colis" class="service" data-reveal>
+        <a href="/en/services#parcels" class="service" data-reveal>
           <div class="service__icon" aria-hidden="true">
             <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4l12 6v12l-12 6L4 22V10z"/><path d="M4 10l12 6 12-6M16 16v12"/></svg>
           </div>
           <div class="service__num mono">02</div>
-          <h3 class="h3">Petits colis</h3>
-          <p>Livraison point A à point B. Documents, clés, oublis, courses entre voisins. Discret et rapide.</p>
-          <span class="service__more">Voir détails <span class="arr">→</span></span>
+          <h3 class="h3">Small parcels</h3>
+          <p>Point A to point B delivery. Documents, keys, forgotten items, errands between neighbours. Discreet and quick.</p>
+          <span class="service__more">See details <span class="arr">→</span></span>
         </a>
-        <a href="/services#essentiels" class="service" data-reveal>
+        <a href="/en/services#essentials" class="service" data-reveal>
           <div class="service__icon" aria-hidden="true">
             <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h8v6h6v8h-6v6h-8v-6H6v-8h6z"/></svg>
           </div>
           <div class="service__num mono">03</div>
-          <h3 class="h3">Articles essentiels</h3>
-          <p>Pharmacie, hygiène, produits ménagers, articles pour bébé. Quand sortir n'est pas une option.</p>
-          <span class="service__more">Voir détails <span class="arr">→</span></span>
+          <h3 class="h3">Essential items</h3>
+          <p>Pharmacy, hygiene, cleaning products, baby items. For when going out isn't an option.</p>
+          <span class="service__more">See details <span class="arr">→</span></span>
         </a>
-        <a href="/services#rapide" class="service" data-reveal>
+        <a href="/en/services#quick" class="service" data-reveal>
           <div class="service__icon" aria-hidden="true">
             <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l-6 14h8l-2 10 10-16h-8z"/></svg>
           </div>
           <div class="service__num mono">04</div>
-          <h3 class="h3">Commandes rapides</h3>
-          <p>Tout ce qui n'entre pas dans les autres cases, incluant <strong>repas de restaurant sur demande</strong>. Une seule règle : ça doit être dans le rayon de 9 km.</p>
-          <span class="service__more">Voir détails <span class="arr">→</span></span>
+          <h3 class="h3">Quick errands</h3>
+          <p>Anything that doesn't fit other categories, including <strong>restaurant meals on request</strong>. One rule: must be within the 9 km radius.</p>
+          <span class="service__more">See details <span class="arr">→</span></span>
         </a>
       </div>
     </div>
@@ -419,20 +393,20 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="zone-grid" data-reveal>
         <div>
-          <div class="kicker">Zone desservie</div>
-          <h2 class="h1" style="margin-top:16px;">Rayon de <span class="zone-num">0 à 9 km</span><br/>autour de Sherbrooke.</h2>
-          <p class="lead" style="margin-top: 24px;">Quatre arrondissements couverts. Hors zone : appelez, on évalue au cas par cas.</p>
+          <div class="kicker">Service area</div>
+          <h2 class="h1" style="margin-top:16px;"><span class="zone-num">0 to 9 km</span> radius<br/>around Sherbrooke.</h2>
+          <p class="lead" style="margin-top: 24px;">Four boroughs covered. Outside the zone: call us, we'll assess case by case.</p>
           <ul class="zone-list">
-            <li><span class="zone-list__dot" style="background:var(--blue-600)"></span> Sherbrooke <span class="mono muted">2 km · 8 $</span></li>
-            <li><span class="zone-list__dot" style="background:var(--blue-500)"></span> Fleurimont <span class="mono muted">~5 km · 11 $</span></li>
-            <li><span class="zone-list__dot" style="background:var(--blue-700)"></span> Rock Forest <span class="mono muted">~7 km · 13 $</span></li>
-            <li><span class="zone-list__dot" style="background:var(--ink)"></span> Saint-Élie-d'Orford <span class="mono muted">~8 km · 14 $</span></li>
+            <li><span class="zone-list__dot" style="background:var(--blue-600)"></span> Sherbrooke <span class="mono muted">2 km · $8</span></li>
+            <li><span class="zone-list__dot" style="background:var(--blue-500)"></span> Fleurimont <span class="mono muted">~5 km · $11</span></li>
+            <li><span class="zone-list__dot" style="background:var(--blue-700)"></span> Rock Forest <span class="mono muted">~7 km · $13</span></li>
+            <li><span class="zone-list__dot" style="background:var(--ink)"></span> Saint-Élie-d'Orford <span class="mono muted">~8 km · $14</span></li>
           </ul>
           <div style="margin-top:32px;">
-            <a class="btn btn--dark btn--lg" href="tel:+18732007377">Confirmer ma zone <span class="arr">→</span></a>
+            <a class="btn btn--dark btn--lg" href="tel:+18732007377">Confirm my area <span class="arr">→</span></a>
           </div>
         </div>
-        <figure class="zone-map" aria-label="Carte du rayon de livraison">
+        <figure class="zone-map" aria-label="Delivery radius map">
           <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" role="img">
             <defs>
               <pattern id="grid" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
@@ -451,7 +425,7 @@ import Layout from '../layouts/Layout.astro';
                   stroke="var(--blue-300)" stroke-width="16" fill="none" opacity=".35" stroke-linecap="round"/>
             <path d="M0 320 C 120 280, 220 360, 340 310 S 540 270, 600 290"
                   stroke="var(--blue-600)" stroke-width="1.5" fill="none" opacity=".6"/>
-            <text x="490" y="280" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--muted)" letter-spacing="2">RIV. MAGOG</text>
+            <text x="490" y="280" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--muted)" letter-spacing="2">MAGOG RIV.</text>
 
             <circle cx="300" cy="250" r="220" fill="url(#zone-grad)"/>
             <circle cx="300" cy="250" r="220" fill="none" stroke="var(--blue-600)" stroke-width="1" stroke-dasharray="4 4" opacity=".4"/>
@@ -503,80 +477,80 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- ========== COMMANDER (form) ========== -->
-  <section id="commander">
+  <!-- ========== ORDER (form) ========== -->
+  <section id="order">
     <div class="container">
       <div class="section-head" data-reveal>
         <div>
-          <div class="kicker">Commande en ligne</div>
-          <h2 class="h1" style="margin-top:16px;">Listez vos articles.<br/>On vous rappelle pour confirmer.</h2>
+          <div class="kicker">Online order</div>
+          <h2 class="h1" style="margin-top:16px;">List your items.<br/>We'll call to confirm.</h2>
         </div>
-        <p class="lead section-head__lead">Plus rapide qu'un appel pour les longues listes. On vous rappelle au numéro fourni pour confirmer le total et l'heure d'arrivée.</p>
+        <p class="lead section-head__lead">Faster than a phone call for long lists. We'll call the number you provide to confirm the total and arrival time.</p>
       </div>
 
       <div class="order-grid" data-reveal>
         <form class="order-form" data-form="order" novalidate>
           <div class="order-form__row">
             <div class="field">
-              <label for="f-name">Nom complet <span class="req">*</span></label>
-              <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="ex. Marie Tremblay" />
+              <label for="f-name">Full name <span class="req">*</span></label>
+              <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="e.g. Mary Smith" />
               <div class="field__error mono"></div>
             </div>
             <div class="field">
-              <label for="f-phone">Téléphone mobile <span class="req">*</span></label>
+              <label for="f-phone">Mobile phone <span class="req">*</span></label>
               <input id="f-phone" name="phone" type="tel" required data-phone autocomplete="tel" inputmode="tel" placeholder="(873) 200-7377" />
-              <div class="field__hint">Format canadien à 10 chiffres</div>
+              <div class="field__hint">10-digit Canadian format</div>
               <div class="field__error mono"></div>
             </div>
           </div>
 
           <div class="order-form__row order-form__row--addr">
             <div class="field" style="flex:2">
-              <label for="f-addr">Adresse de livraison <span class="req">*</span></label>
-              <input id="f-addr" name="address" type="text" required autocomplete="street-address" placeholder="ex. 1234 rue King Ouest, app. 5" />
-              <div class="field__hint">Numéro civique, rue, appartement</div>
+              <label for="f-addr">Delivery address <span class="req">*</span></label>
+              <input id="f-addr" name="address" type="text" required autocomplete="street-address" placeholder="e.g. 1234 King St West, Apt 5" />
+              <div class="field__hint">Street number, street name, apartment</div>
               <div class="field__error mono"></div>
             </div>
             <div class="field" style="flex:1">
-              <label for="f-zone">Secteur <span class="req">*</span></label>
+              <label for="f-zone">Area <span class="req">*</span></label>
               <select id="f-zone" name="zone" required>
-                <option value="">Choisir…</option>
-                <option>Sherbrooke / centre (~2 km · 8 $)</option>
-                <option>Fleurimont (~5 km · 11 $)</option>
-                <option>Rock Forest (~7 km · 13 $)</option>
-                <option>Saint-Élie-d'Orford (~8 km · 14 $)</option>
-                <option>Hors 9 km · à confirmer</option>
+                <option value="">Choose…</option>
+                <option>Sherbrooke / centre (~2 km · $8)</option>
+                <option>Fleurimont (~5 km · $11)</option>
+                <option>Rock Forest (~7 km · $13)</option>
+                <option>Saint-Élie-d'Orford (~8 km · $14)</option>
+                <option>Outside 9 km · to confirm</option>
               </select>
               <div class="field__error mono"></div>
             </div>
           </div>
 
           <div class="field">
-            <label for="f-order">Liste d'articles <span class="req">*</span></label>
-            <textarea id="f-order" name="order" required rows="6" placeholder="ex.&#10;1 × Lait 2 % 2 L&#10;2 × Coke 591 ml&#10;1 × Chips Lay's BBQ&#10;1 × Pain tranché&#10;1 × Billet 6/49 (tirage du mercredi)"></textarea>
-            <div class="field__hint">Précisez marques, formats et quantités. Plus c'est précis, plus on est rapide.</div>
+            <label for="f-order">Item list <span class="req">*</span></label>
+            <textarea id="f-order" name="order" required rows="6" placeholder="e.g.&#10;1 × 2% milk 2 L&#10;2 × Coke 591 ml&#10;1 × Lay's BBQ chips&#10;1 × Sliced bread&#10;1 × 6/49 ticket (Wednesday draw)"></textarea>
+            <div class="field__hint">Specify brands, formats and quantities. The more precise you are, the faster we go.</div>
             <div class="field__error mono"></div>
           </div>
 
           <div class="field">
-            <label for="f-notes">Notes (optionnel)</label>
-            <input id="f-notes" name="notes" type="text" placeholder="Code de porte, instructions de livraison, etc." />
+            <label for="f-notes">Notes (optional)</label>
+            <input id="f-notes" name="notes" type="text" placeholder="Door code, delivery instructions, etc." />
           </div>
 
           <label class="checkbox">
             <input type="checkbox" name="age_consent" />
             <span>
-              <strong>Je confirme avoir 18 ans et plus</strong> pour tout achat d'alcool ou de loterie.
-              Une pièce d'identité valide sera demandée à la livraison, sans exception.
+              <strong>I confirm I am 18 years or older</strong> for any alcohol or lottery purchase.
+              Valid ID will be required upon delivery, without exception.
             </span>
           </label>
 
           <div class="order-form__submit">
             <button type="submit" class="btn btn--primary btn--xl">
-              Envoyer ma commande
+              Send my order
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </button>
-            <span class="mono muted">ou appelez le <a href="tel:+18732007377" style="color:var(--primary);text-decoration:underline;">873 200-7377</a></span>
+            <span class="mono muted">or call <a href="tel:+18732007377" style="color:var(--primary);text-decoration:underline;">873 200-7377</a></span>
           </div>
 
           <div class="form-status" data-form-status></div>
@@ -584,34 +558,34 @@ import Layout from '../layouts/Layout.astro';
 
         <aside class="order-aside">
           <div class="order-aside__card">
-            <div class="kicker">Bon à savoir</div>
+            <div class="kicker">Good to know</div>
             <ul class="order-aside__list">
               <li>
-                <strong>Confirmation par téléphone</strong>
-                <span>On vous rappelle pour confirmer le total et l'heure d'arrivée, généralement en moins de 5 minutes.</span>
+                <strong>Phone confirmation</strong>
+                <span>We call you back to confirm the total and arrival time, usually within 5 minutes.</span>
               </li>
               <li>
-                <strong>Paiement à la porte</strong>
-                <span>Square (débit, crédit, sans contact) ou comptant. Aucun paiement en ligne.</span>
+                <strong>Pay at the door</strong>
+                <span>Square (debit, credit, contactless) or cash. No online payment.</span>
               </li>
               <li>
-                <strong>Vérification d'âge</strong>
-                <span>Pour alcool et loterie : pièce d'identité demandée à la porte. Sans exception.</span>
+                <strong>Age verification</strong>
+                <span>For alcohol and lottery: ID required at the door. Without exception.</span>
               </li>
               <li>
-                <strong>Article manquant ?</strong>
-                <span>On appelle avant de revenir. Vous choisissez : remplacer, retirer, attendre.</span>
+                <strong>Item out of stock?</strong>
+                <span>We call before heading back. You choose: replace, remove, or wait for the next restock.</span>
               </li>
             </ul>
           </div>
           <div class="order-aside__contact">
             <a class="phone-cta" href="tel:+18732007377" style="width:100%;justify-content:center;padding:14px;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              Appeler 873 200-7377
+              Call 873 200-7377
             </a>
             <div class="order-aside__hours mono">
-              <span><strong>Lun–Sam</strong> 9 h–21 h</span>
-              <span><strong>Dim</strong> 10 h–17 h</span>
+              <span><strong>Mon–Sat</strong> 9 AM – 9 PM</span>
+              <span><strong>Sun</strong> 10 AM – 5 PM</span>
             </div>
           </div>
         </aside>
@@ -624,31 +598,31 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="section-head" data-reveal>
         <div>
-          <div class="kicker">Questions fréquentes</div>
-          <h2 class="h1" style="margin-top:16px;">Le strict nécessaire.</h2>
+          <div class="kicker">Frequently asked</div>
+          <h2 class="h1" style="margin-top:16px;">The basics.</h2>
         </div>
-        <p class="lead section-head__lead">Pour les détails, voyez la <a href="/faq" style="text-decoration:underline;color:var(--primary)">page Informations</a>.</p>
+        <p class="lead section-head__lead">For details, see the <a href="/en/info" style="text-decoration:underline;color:var(--primary)">Info page</a>.</p>
       </div>
       <div class="faq" data-reveal>
         <details class="faq__item" open>
-          <summary><span class="mono faq__num">01</span> Y a-t-il un montant minimum de commande ?</summary>
-          <div class="faq__answer">Non. On livre même un seul article. Le frais de livraison fixe par zone reste le même quelle que soit la taille de la commande.</div>
+          <summary><span class="mono faq__num">01</span> Is there a minimum order amount?</summary>
+          <div class="faq__answer">No. We deliver even a single item. The flat delivery fee per area stays the same regardless of order size.</div>
         </details>
         <details class="faq__item">
-          <summary><span class="mono faq__num">02</span> Les articles coûtent-ils plus cher qu'au dépanneur ?</summary>
-          <div class="faq__answer">Non. Vous payez exactement le prix affiché en magasin. La livraison fixe est le seul ajout. Reçu disponible sur demande.</div>
+          <summary><span class="mono faq__num">02</span> Do items cost more than at the store?</summary>
+          <div class="faq__answer">No. You pay exactly the price posted in store. The flat delivery fee is the only addition. Receipt available on request.</div>
         </details>
         <details class="faq__item">
-          <summary><span class="mono faq__num">03</span> Comment fonctionne la vérification d'âge ?</summary>
-          <div class="faq__answer">Pour l'alcool et la loterie, une pièce d'identité valide est demandée à la porte. Aucune exception. Le livreur peut refuser la livraison si l'âge n'est pas vérifiable.</div>
+          <summary><span class="mono faq__num">03</span> How does age verification work?</summary>
+          <div class="faq__answer">For alcohol and lottery, a valid ID is required at the door. No exceptions. The driver may refuse delivery if age cannot be verified.</div>
         </details>
         <details class="faq__item">
-          <summary><span class="mono faq__num">04</span> Quelles méthodes de paiement acceptez-vous ?</summary>
-          <div class="faq__answer">Square pour carte (débit, crédit, sans contact) ou comptant. Aucun paiement en ligne : vous payez quand on arrive.</div>
+          <summary><span class="mono faq__num">04</span> What payment methods do you accept?</summary>
+          <div class="faq__answer">Square for card (debit, credit, contactless) or cash. No online payment: you pay when we arrive.</div>
         </details>
         <details class="faq__item">
-          <summary><span class="mono faq__num">05</span> Que se passe-t-il si un article manque au dépanneur ?</summary>
-          <div class="faq__answer">On vous appelle avant de quitter le dépanneur. Vous choisissez : remplacer par un produit équivalent, retirer l'article, ou attendre un autre approvisionnement. Vous ne payez jamais pour ce qu'on ne livre pas.</div>
+          <summary><span class="mono faq__num">05</span> What happens if an item is out of stock?</summary>
+          <div class="faq__answer">We call you before leaving the store. You choose: replace with an equivalent product, remove the item, or wait for the next restock. You never pay for what we don't deliver.</div>
         </details>
       </div>
     </div>
@@ -659,36 +633,36 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="bigcta__box">
         <div>
-          <div class="kicker" style="color:rgba(255,255,255,.7);">Prêt à commander ?</div>
+          <div class="kicker" style="color:rgba(255,255,255,.7);">Ready to order?</div>
           <h2 class="h-display" style="color:#fff;margin-top:16px;font-size:clamp(40px,7vw,88px);">
-            Touchez le numéro.<br/>On s'occupe du reste.
+            Tap the number.<br/>We'll do the rest.
           </h2>
-          <p class="lead" style="color:rgba(255,255,255,.78);max-width:48ch;margin-top:20px;">Disponible 7 jours sur 7. Réponse rapide, tarif fixe annoncé d'avance.</p>
+          <p class="lead" style="color:rgba(255,255,255,.78);max-width:48ch;margin-top:20px;">Available 7 days a week. Quick response, flat fee announced upfront.</p>
           <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;">
             <a class="btn btn--primary btn--xl" href="tel:+18732007377" style="background:#fff;color:var(--blue-700);">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               873 200-7377
             </a>
-            <a class="btn btn--xl" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.3);" href="#commander">
-              Commander en ligne
+            <a class="btn btn--xl" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.3);" href="#order">
+              Order online
             </a>
           </div>
         </div>
         <div class="bigcta__aside">
           <div class="bigcta__side mono">
-            <div><span>BASE</span><strong>8 $</strong></div>
-            <div><span>PAR KM</span><strong>+1 $</strong></div>
-            <div><span>RAYON</span><strong>0–9 KM</strong></div>
-            <div><span>OUVERT</span><strong>7 J/7</strong></div>
+            <div><span>BASE</span><strong>$8</strong></div>
+            <div><span>PER KM</span><strong>+$1</strong></div>
+            <div><span>RADIUS</span><strong>0–9 KM</strong></div>
+            <div><span>OPEN</span><strong>7 DAYS</strong></div>
           </div>
           <div class="bigcta__pay">
             <div class="bigcta__pay-head">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
-              <span class="mono">Paiement à la porte</span>
+              <span class="mono">Pay at the door</span>
             </div>
-            <strong>Square ou comptant</strong>
+            <strong>Square or cash</strong>
             <div class="bigcta__pay-tags">
-              <span>Débit</span><span>Crédit</span><span>Sans contact</span><span>Comptant</span>
+              <span>Debit</span><span>Credit</span><span>Contactless</span><span>Cash</span>
             </div>
           </div>
         </div>

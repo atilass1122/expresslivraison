@@ -278,7 +278,7 @@ section.no-divider + section { border-top: 0; }
   position: relative;
   isolation: isolate;
 }
-.btn:hover { background: var(--white); border-color: var(--gray-300); box-shadow: var(--shadow-2); transform: translateY(-1px); }
+.btn:not(.btn--primary):not(.btn--dark):hover { background: var(--white); border-color: var(--gray-300); box-shadow: var(--shadow-2); transform: translateY(-1px); }
 .btn:active { transform: translateY(0); box-shadow: var(--shadow-soft); }
 
 .btn--primary {
@@ -584,7 +584,7 @@ section.no-divider + section { border-top: 0; }
   gap: 48px;
   align-items: start;
 }
-.footer h4 {
+.footer h3 {
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 500;
@@ -1349,6 +1349,9 @@ section.no-divider + section { border-top: 0; }
 .form-status:not(:empty) { display: block; }
 .form-status--err { background: rgba(194,52,43,.08); color: var(--red); border: 1px solid rgba(194,52,43,.2); }
 .form-status--ok { background: var(--green-50); color: var(--green); border: 1px solid rgba(15,138,77,.2); }
+
+/* hCaptcha widget : un peu d'espace au-dessus du bouton submit. */
+.form-captcha { margin: 8px 0 4px; min-height: 78px; }
 
 .order-aside { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 80px; }
 .order-aside__card {

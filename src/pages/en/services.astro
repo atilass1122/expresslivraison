@@ -1,0 +1,276 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Local delivery services in Sherbrooke"
+  description="Delivery in Sherbrooke: convenience store, small parcels, essentials, quick errands and restaurant on request. Rate $8 / 2 km + $1/km, 7 days."
+  bodyClass="page-services"
+  lang="en"
+  routeKey="services"
+>
+  <!-- ========== HEADER ========== -->
+  <section class="svc-hero">
+    <div class="container svc-hero__grid">
+      <div>
+        <div class="hero__meta">
+          <span class="pill pill--blue">Services</span>
+          <span class="pill"><span class="mono">4 SERVICES · 7 DAYS</span></span>
+        </div>
+        <h1 class="h-display" style="font-size:clamp(40px,7vw,88px);">
+          Local delivery,<br/>several ways<br/>to <span class="hero__highlight">help you out</span>.
+        </h1>
+        <p class="lead">Express Livraison isn't just a convenience store service. We also deliver parcels, essential items, and whatever you ask us within a 9 km radius. <strong>Restaurant meals on request.</strong> Single rate: <strong>$8 for 2 km + $1 per extra km</strong>.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary btn--xl" href="tel:+18732007377">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Order · 873 200-7377
+          </a>
+          <a class="btn btn--xl" href="/en#order">Order online <span class="arr">→</span></a>
+        </div>
+      </div>
+      <nav class="svc-toc" aria-label="Services navigation">
+        <span class="kicker">Several options</span>
+        <ul>
+          <li><a href="#store"><span class="mono">01</span> Convenience store</a></li>
+          <li><a href="#parcels"><span class="mono">02</span> Small parcels</a></li>
+          <li><a href="#essentials"><span class="mono">03</span> Essential items</a></li>
+          <li><a href="#quick"><span class="mono">04</span> Quick errands</a></li>
+          <li><a href="#restaurant" style="font-style:italic;color:var(--muted);"><span class="mono">+</span> Restaurant (on request)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ========== PRICING FORMULA ========== -->
+  <section style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="svc-formula" data-reveal>
+        <div class="svc-formula__head">
+          <div class="kicker">Delivery pricing · applies to all services</div>
+          <h2 class="h2" style="margin-top:10px;">A simple formula, regardless of what we deliver.</h2>
+        </div>
+        <div class="svc-formula__body">
+          <div class="svc-formula__cell">
+            <span class="mono">Base</span>
+            <div class="svc-formula__val"><span>$</span>8</div>
+            <strong>For 2 km</strong>
+          </div>
+          <div class="svc-formula__op">+</div>
+          <div class="svc-formula__cell">
+            <span class="mono">Distance</span>
+            <div class="svc-formula__val"><span>$</span>1<span class="unit">/km</span></div>
+            <strong>Per extra km</strong>
+          </div>
+          <div class="svc-formula__op">=</div>
+          <div class="svc-formula__cell svc-formula__cell--total">
+            <span class="mono">Max at 9 km</span>
+            <div class="svc-formula__val"><span>$</span>15</div>
+            <strong>Service area limit</strong>
+          </div>
+        </div>
+        <p class="mono" style="margin:24px 0 0;color:var(--muted);font-size:12px;letter-spacing:.04em;">* Distance calculated from pickup point. Items billed at store price. Taxes applicable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICE 01 — STORE ========== -->
+  <section id="store">
+    <div class="container">
+      <div class="svc-row">
+        <header class="svc-row__head" data-reveal>
+          <div class="svc-row__num mono">Service 01 / 04</div>
+          <h2 class="h1" style="margin-top:14px;">Convenience store.</h2>
+          <p class="lead" style="margin-top:14px;">Our most popular service. Four product families, hundreds of items. If you'd normally find it at the corner store, we'll bring it to you.</p>
+        </header>
+
+        <div class="svc-cats" data-reveal>
+          <article class="svc-cat" id="food">
+            <div class="svc-cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m5 11 4-7"/><path d="m19 11-4-7"/><path d="M2 11h20"/><path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.6-7.4"/><path d="m9 11 1 9"/><path d="M4.5 15.5h15"/><path d="m15 11-1 9"/></svg>
+            </div>
+            <div>
+              <div class="mono svc-cat__id">A</div>
+              <h3 class="h3">Food &amp; snacks</h3>
+              <p>Chips, candy, chocolate, cookies, bread, milk, cheese, yogurt, frozen meals, canned goods, condiments, cereal.</p>
+            </div>
+          </article>
+
+          <article class="svc-cat" id="drinks">
+            <div class="svc-cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m6 8 1.75 12.28a2 2 0 0 0 2 1.72h4.54a2 2 0 0 0 2-1.72L18 8"/><path d="M5 8h14"/><path d="M7 15a6.47 6.47 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/><path d="m12 8 1-6h2"/></svg>
+            </div>
+            <div>
+              <div class="mono svc-cat__id">B <span class="pill pill--age" style="margin-left:6px;">18 +</span></div>
+              <h3 class="h3">Drinks</h3>
+              <p>Water, juice, sodas, energy drinks, coffee, tea. Beer, wine, spirits (ID mandatory at the door).</p>
+            </div>
+          </article>
+
+          <article class="svc-cat" id="toiletries">
+            <div class="svc-cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 4.8 7 3c-.29 1.8-1.14 3.13-2.29 4.06S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>
+            </div>
+            <div>
+              <div class="mono svc-cat__id">C</div>
+              <h3 class="h3">Toiletries</h3>
+              <p>Toilet paper, tissues, soap, toothpaste, shampoo, deodorant, feminine hygiene, diapers.</p>
+            </div>
+          </article>
+
+          <article class="svc-cat" id="misc">
+            <div class="svc-cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.3 10a.7.7 0 0 1-.626-1.079L11.4 3a.7.7 0 0 1 1.198-.043L16.3 8.9a.7.7 0 0 1-.572 1.1Z"/><rect x="3" y="14" width="7" height="7" rx="1"/><circle cx="17.5" cy="17.5" r="3.5"/></svg>
+            </div>
+            <div>
+              <div class="mono svc-cat__id">D <span class="pill pill--age" style="margin-left:6px;">Lottery 18 +</span></div>
+              <h3 class="h3">Miscellaneous</h3>
+              <p>Batteries, prepaid cards, newspapers, magazines, Loto-Québec tickets (6/49, Lotto Max, scratch).</p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="svc-row__note">
+          <strong>Restricted products (alcohol, lottery):</strong> minimum age is 18. Valid ID required at the door, without exception. Without ID, these items are not delivered (the rest of the order is).
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICE 02 — PARCELS ========== -->
+  <section id="parcels" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="svc-block">
+        <div class="svc-block__copy" data-reveal>
+          <div class="svc-row__num mono">Service 02 / 04</div>
+          <h2 class="h1" style="margin-top:14px;">Small parcels.</h2>
+          <p class="lead" style="margin-top:14px;">Point A to point B delivery in Sherbrooke. Documents, keys, forgotten items, errands between neighbours, returns. We pick up, we drop off. Discreet, fast, no questions.</p>
+          <ul class="svc-block__list">
+            <li><strong>Accepted format</strong><span>Anything that fits in a standard car. Maximum ~15 kg / parcel.</span></li>
+            <li><strong>Discretion</strong><span>No questions about content, within the law (nothing illegal, dangerous, or fragile without protection).</span></li>
+            <li><strong>Signature</strong><span>On request to the recipient. Photo of drop-off possible.</span></li>
+            <li><strong>Typical cases</strong><span>Document left at the office, keys to a loved one, return of a loan between friends, errand exchange.</span></li>
+          </ul>
+        </div>
+        <aside class="svc-block__panel" data-reveal>
+          <div class="svc-block__panel-head">
+            <span class="mono">How it works</span>
+          </div>
+          <ol class="svc-block__steps">
+            <li>
+              <span class="svc-block__step-num mono">01</span>
+              <div><strong>You call us</strong>Specify pickup address, drop-off address, and approximate content.</div>
+            </li>
+            <li>
+              <span class="svc-block__step-num mono">02</span>
+              <div><strong>We confirm</strong>Distance calculated, total announced: $8 for the first 2 km + $1/km beyond.</div>
+            </li>
+            <li>
+              <span class="svc-block__step-num mono">03</span>
+              <div><strong>Pickup</strong>The driver picks up the parcel at point A. ID if needed.</div>
+            </li>
+            <li>
+              <span class="svc-block__step-num mono">04</span>
+              <div><strong>Delivery</strong>Drop-off at point B. Payment by sender or recipient, as agreed.</div>
+            </li>
+          </ol>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICE 03 — ESSENTIALS ========== -->
+  <section id="essentials">
+    <div class="container">
+      <div class="svc-block">
+        <div class="svc-block__copy" data-reveal>
+          <div class="svc-row__num mono">Service 03 / 04</div>
+          <h2 class="h1" style="margin-top:14px;">Essential items.</h2>
+          <p class="lead" style="margin-top:14px;">Pharmacy, hygiene, baby, urgent cleaning products. For those moments when going out isn't an option: illness, young child sleeping, scary weather.</p>
+          <ul class="svc-block__list">
+            <li><strong>Pharmacy</strong><span>Over-the-counter medication (Tylenol, Advil, syrups, drops…), first aid items, thermometers, bandages.</span></li>
+            <li><strong>Hygiene &amp; body</strong><span>Personal care products, body care, specific toiletries, deodorant, toothpaste.</span></li>
+            <li><strong>Baby &amp; kids</strong><span>Diapers, wipes, infant formula, baby food, emergency bottles, pacifiers.</span></li>
+            <li><strong>Cleaning</strong><span>Dish soap, laundry detergent, toilet paper, tissues, cleaning products.</span></li>
+          </ul>
+        </div>
+        <aside class="svc-block__panel svc-block__panel--accent" data-reveal>
+          <div class="svc-block__panel-head">
+            <span class="mono">When we step up</span>
+          </div>
+          <div class="svc-block__story">
+            <p>"My baby has a 38°C fever, I'm alone, it's snowing outside."<br/>This kind of call gets priority. We let the dispatcher know, and the driver makes a detour if there is one.</p>
+            <p>We don't sell prescription medication: you must provide us with the pre-filled prescription, or ask us to buy over-the-counter products only.</p>
+            <a class="btn btn--primary btn--lg" href="tel:+18732007377" style="margin-top:8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Call 873 200-7377
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICE 04 — QUICK ========== -->
+  <section id="quick" style="background:var(--grad-ink);color:#fff;">
+    <div class="container">
+      <div class="svc-block">
+        <div class="svc-block__copy" data-reveal>
+          <div class="svc-row__num mono" style="color:#8FAFFF;">Service 04 / 04</div>
+          <h2 class="h1" style="margin-top:14px;color:#fff;">Quick local errands.</h2>
+          <p class="lead" style="margin-top:14px;color:rgba(255,255,255,.78);">The "everything else" category. If it's legal, transportable, and within the 9 km radius around Sherbrooke, we'll figure it out. Wedding on the weekend? Party still going? We've got you covered.</p>
+          <ul class="svc-block__list svc-block__list--dark">
+            <li><strong style="color:#fff;">Restaurant meals</strong><span style="color:rgba(255,255,255,.7);">On request. Tell us the restaurant and the order. We pick up, we bring. <em>The restaurant must accept takeout orders.</em></span></li>
+            <li><strong style="color:#fff;">Events</strong><span style="color:rgba(255,255,255,.7);">Restock during a party (ice, mixers, forgotten snacks). The driver can make multiple trips.</span></li>
+            <li><strong style="color:#fff;">Hardware</strong><span style="color:rgba(255,255,255,.7);">Small tools, screws, light bulbs, basic accessories. Specify your preferred hardware store.</span></li>
+            <li><strong style="color:#fff;">Pets</strong><span style="color:rgba(255,255,255,.7);">Dog/cat food, litter, basic accessories. No veterinary medication.</span></li>
+            <li><strong style="color:#fff;">Special cases</strong><span style="color:rgba(255,255,255,.7);">Call and explain. If we can, we will. If we can't, we'll tell you straight.</span></li>
+          </ul>
+        </div>
+        <aside class="svc-block__panel svc-block__panel--ghost" data-reveal>
+          <div class="svc-block__panel-head" style="background:var(--grad-brand);">
+            <span class="mono">One rule, only one</span>
+          </div>
+          <div class="svc-rule">
+            <div class="svc-rule__big">9<span> km</span></div>
+            <p>As long as the pickup point is in our area, we can handle it. <strong>If the contents are legal and transportable</strong>, we deliver.</p>
+            <div class="svc-rule__list">
+              <div><span class="mono">OK</span> Anything legal</div>
+              <div><span class="mono">OK</span> Anything that fits in a car</div>
+              <div><span class="mono">NO</span> Weapons, drugs, dangerous goods</div>
+              <div><span class="mono">NO</span> Live animals (not transported)</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESTAURANT (mention) ========== -->
+  <section id="restaurant" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="restaurant-note">
+        <div data-reveal>
+          <div class="svc-row__num mono">On request</div>
+          <h2 class="h2" style="margin-top:14px;">Restaurant meal? Call us.</h2>
+          <p class="lead" style="margin-top:14px;max-width:54ch;">Not our main service, but we can pick up your meal from the local restaurant of your choice, as long as it accepts takeout orders and is within the 9 km radius. No partnership, no preset menu: <strong>you</strong> order from the restaurant, we handle the transport.</p>
+          <a class="btn btn--primary btn--lg" href="tel:+18732007377" style="margin-top:24px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Request a restaurant pickup
+          </a>
+        </div>
+        <aside class="restaurant-note__how" data-reveal>
+          <div class="mono restaurant-note__label">How to proceed</div>
+          <ol>
+            <li><strong>You call the restaurant</strong> and place your takeout order (with the scheduled time).</li>
+            <li><strong>You call us</strong> with the restaurant name, pickup time and total to pay.</li>
+            <li><strong>We confirm</strong> the delivery rate based on distance.</li>
+            <li><strong>We pick up</strong> and deliver. You reimburse the meal + delivery at the door.</li>
+          </ol>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</Layout>

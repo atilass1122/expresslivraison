@@ -1,0 +1,492 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faq = [
+  ['How can I place an order?', "Two options: call 873 200-7377 between 9 AM and 9 PM (10 AM–5 PM on Sunday), or use the online form and we'll call to confirm."],
+  ['What is the average delivery time?', "Between 15 and 35 minutes depending on your area and how busy we are. Sherbrooke centre: 15–25 min. Fleurimont: 20–30 min. Rock Forest and Saint-Élie: 25–35 min."],
+  ['Is there a minimum order amount?', "No. We deliver even a single item. The flat delivery fee per area stays the same regardless of order size."],
+  ['What if you don’t deliver in my area?', "Our regular zone covers 0 to 9 km around Sherbrooke. Outside the zone, call us: we assess based on distance and time."],
+  ['What happens if an item is out of stock at the store?', "The driver calls you before leaving the store. You decide: replace, remove, or switch stores. You never pay for what we don't deliver."],
+  ['Do items cost more than at the store?', "No. You pay exactly the in-store price, taxes included. The flat delivery fee is the only addition to the total."],
+  ['What payment methods do you accept?', "Square for card (debit, credit, contactless via Apple Pay / Google Pay) or cash. No online payment: you pay at the door."],
+  ['Is tipping mandatory?', "No, never. Tips are at your discretion. The flat delivery fee already covers the service."],
+  ['Can I get a receipt?', "Yes, on request. The driver can print a Square receipt or we can email it to you."],
+  ['Do you deliver alcohol?', "Yes: beer, wine and spirits. Valid ID is mandatory at the door, without exception."],
+  ['Do you deliver lottery tickets?', "Yes: Loto-Québec (6/49, Lotto Max, Banco, Grande Vie, scratch). Minimum age 18, ID may be required."],
+];
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+
+<Layout
+  title="Info · FAQ, payment, rates"
+  description="FAQ, payment, rates, age verification and service area. Local delivery in Sherbrooke, 7 days a week. Call 873 200-7377."
+  bodyClass="page-informations"
+  lang="en"
+  routeKey="info"
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />
+  <!-- ========== HERO ========== -->
+  <section class="info-hero">
+    <div class="container info-hero__grid">
+      <div>
+        <div class="hero__meta">
+          <span class="pill pill--blue">Info &amp; terms</span>
+        </div>
+        <h1 class="h-display" style="font-size:clamp(40px,6.5vw,80px);">Everything you need to know<br/>before <span class="hero__highlight">calling</span>.</h1>
+        <p class="lead">FAQ, terms of service, age verification, payment, areas covered, privacy. If something's missing, <a href="tel:+18732007377" style="text-decoration:underline;color:var(--primary);">call us</a>.</p>
+      </div>
+      <nav class="info-toc" aria-label="Table of contents">
+        <span class="kicker">Navigate</span>
+        <ul>
+          <li><a href="#faq"><span class="mono">01</span> FAQ</a></li>
+          <li><a href="#categories"><span class="mono">02</span> Item categories</a></li>
+          <li><a href="#payment"><span class="mono">03</span> Payment &amp; rates</a></li>
+          <li><a href="#age"><span class="mono">04</span> Age verification</a></li>
+          <li><a href="#zones"><span class="mono">05</span> Areas &amp; hours</a></li>
+          <li><a href="#privacy"><span class="mono">06</span> Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section id="faq">
+    <div class="container">
+      <div class="info-head" data-reveal>
+        <span class="kicker">Section 01</span>
+        <h2 class="h1" style="margin-top:14px;">Frequently asked questions.</h2>
+      </div>
+
+      <div class="info-faq" data-reveal>
+        <div class="info-faq__group">
+          <h3 class="info-faq__group-title">Order &amp; delivery</h3>
+          <details class="faq__item" open>
+            <summary><span class="mono faq__num">Q1</span> How can I place an order?</summary>
+            <div class="faq__answer">Two options: call <a href="tel:+18732007377"><strong>873 200-7377</strong></a> between 9 AM and 9 PM (10 AM–5 PM on Sunday), or use the <a href="/en#order"><strong>online form</strong></a> and we'll call to confirm.</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q2</span> What is the average delivery time?</summary>
+            <div class="faq__answer">Between 15 and 35 minutes depending on your area and how busy we are. Sherbrooke centre: 15–25 min. Fleurimont: 20–30 min. Rock Forest and Saint-Élie: 25–35 min.</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q3</span> Is there a minimum order amount?</summary>
+            <div class="faq__answer">No. We deliver even a single item. The flat delivery fee per area stays the same regardless of order size.</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q4</span> What if you don't deliver in my area?</summary>
+            <div class="faq__answer">Our regular zone covers 0 to 9 km around Sherbrooke (4 boroughs). Outside the zone, call us: we assess based on distance and time. Not always possible, but we look at it.</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q5</span> What happens if an item is out of stock at the store?</summary>
+            <div class="faq__answer">The driver calls you before leaving the store. You decide: replace with an equivalent product, remove the item, or switch stores. You never pay for what we don't deliver.</div>
+          </details>
+        </div>
+
+        <div class="info-faq__group">
+          <h3 class="info-faq__group-title">Payment &amp; pricing</h3>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q6</span> Do items cost more than at the store?</summary>
+            <div class="faq__answer">No. You pay exactly the in-store price, taxes included. The flat delivery fee is the only addition to the total.</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q7</span> What payment methods do you accept?</summary>
+            <div class="faq__answer">Square for card (debit, credit, contactless via Apple Pay / Google Pay) or cash. No online payment: you pay when the driver arrives at your door.</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q8</span> Is tipping mandatory?</summary>
+            <div class="faq__answer">No, never. Tips are at your discretion. The flat delivery fee already covers the service. If you'd like to leave one, it's appreciated, but never expected.</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q9</span> Can I get a receipt for my expenses?</summary>
+            <div class="faq__answer">Yes, on request. The driver can print a Square receipt or we can email it to you. Ideal for business accounting.</div>
+          </details>
+        </div>
+
+        <div class="info-faq__group">
+          <h3 class="info-faq__group-title">Restricted products</h3>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q10</span> Do you deliver alcohol?</summary>
+            <div class="faq__answer">Yes: beer, wine and spirits available at the convenience store. <strong>Valid ID is mandatory at the door.</strong> Without ID, the driver refuses to deliver the alcohol (other items are still handed over, alcohol is removed from the total).</div>
+          </details>
+          <details class="faq__item">
+            <summary><span class="mono faq__num">Q11</span> Do you deliver lottery tickets?</summary>
+            <div class="faq__answer">Yes: Loto-Québec (6/49, Lotto Max, Banco, Grande Vie, scratch). <strong>Minimum age 18 is required</strong> and ID may be requested. Specify the draw number if applicable.</div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CATEGORIES ========== -->
+  <section id="categories" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="info-head" data-reveal>
+        <span class="kicker">Section 02</span>
+        <h2 class="h1" style="margin-top:14px;">Item categories delivered.</h2>
+        <p class="lead" style="margin-top:16px;">Four main families. Any product normally sold at a convenience store can be ordered. If you don't see it, ask anyway.</p>
+      </div>
+
+      <div class="cats">
+        <article class="cat" id="food" data-reveal>
+          <div class="cat__header">
+            <div class="mono cat__id">01</div>
+            <div class="cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m5 11 4-7"/><path d="m19 11-4-7"/><path d="M2 11h20"/><path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.6-7.4"/><path d="m9 11 1 9"/><path d="M4.5 15.5h15"/><path d="m15 11-1 9"/></svg>
+            </div>
+            <h3 class="h2">Food &amp; snacks</h3>
+          </div>
+          <div class="cat__body">
+            <p class="lead" style="font-size:16px;max-width:none;">From a small craving to running out of morning milk.</p>
+            <ul class="cat__list">
+              <li>Chips, crisps, popcorn</li>
+              <li>Candy, chocolate, gum</li>
+              <li>Cookies, granola bars, crackers</li>
+              <li>Bread, bagels, tortillas</li>
+              <li>Milk, cheese, yogurt, eggs</li>
+              <li>Frozen meals (pizzas, lasagnas…)</li>
+              <li>Cereal, toast, oatmeal</li>
+              <li>Canned goods, condiments, sauces</li>
+              <li>Ice cream, frozen desserts</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cat" id="drinks" data-reveal>
+          <div class="cat__header">
+            <div class="mono cat__id">02 <span class="pill pill--age" style="margin-left:8px;">18 +</span></div>
+            <div class="cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m6 8 1.75 12.28a2 2 0 0 0 2 1.72h4.54a2 2 0 0 0 2-1.72L18 8"/><path d="M5 8h14"/><path d="M7 15a6.47 6.47 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/><path d="m12 8 1-6h2"/></svg>
+            </div>
+            <h3 class="h2">Drinks</h3>
+          </div>
+          <div class="cat__body">
+            <p class="lead" style="font-size:16px;max-width:none;">From a water bottle to a Friday night six-pack.</p>
+            <ul class="cat__list">
+              <li>Bottled water (still, sparkling)</li>
+              <li>Fruit juice, smoothies</li>
+              <li>Energy drinks (Red Bull, Monster…)</li>
+              <li>Sodas (Coca-Cola, Pepsi, 7Up…)</li>
+              <li>Coffee (filter, latte, canned)</li>
+              <li>Tea, herbal infusions, kombucha</li>
+              <li>Beer (can, bottle, six-pack, 12, 24)</li>
+              <li>Wine (red, white, rosé, sparkling)</li>
+              <li>Spirits (vodka, gin, rum, whisky)</li>
+            </ul>
+            <div class="cat__note">
+              <strong>Important:</strong> minimum age is 18. ID required at the door, without exception.
+            </div>
+          </div>
+        </article>
+
+        <article class="cat" id="toiletries" data-reveal>
+          <div class="cat__header">
+            <div class="mono cat__id">03</div>
+            <div class="cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 4.8 7 3c-.29 1.8-1.14 3.13-2.29 4.06S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>
+            </div>
+            <h3 class="h2">Toiletries</h3>
+          </div>
+          <div class="cat__body">
+            <p class="lead" style="font-size:16px;max-width:none;">When you notice at 9 AM on a Sunday that there's nothing left.</p>
+            <ul class="cat__list">
+              <li>Toilet paper (single, double, triple ply)</li>
+              <li>Tissues (boxes, packs)</li>
+              <li>Soaps (body, hands, antibacterial)</li>
+              <li>Toothpaste, toothbrush, dental floss</li>
+              <li>Shampoo, conditioner</li>
+              <li>Deodorant, antiperspirant</li>
+              <li>Razors, shaving foam</li>
+              <li>Tampons, sanitary pads</li>
+              <li>Diapers, baby wipes</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cat" id="misc" data-reveal>
+          <div class="cat__header">
+            <div class="mono cat__id">04 <span class="pill pill--age" style="margin-left:8px;">Lottery 18 +</span></div>
+            <div class="cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.3 10a.7.7 0 0 1-.626-1.079L11.4 3a.7.7 0 0 1 1.198-.043L16.3 8.9a.7.7 0 0 1-.572 1.1Z"/><rect x="3" y="14" width="7" height="7" rx="1"/><circle cx="17.5" cy="17.5" r="3.5"/></svg>
+            </div>
+            <h3 class="h2">Miscellaneous</h3>
+          </div>
+          <div class="cat__body">
+            <p class="lead" style="font-size:16px;max-width:none;">The "didn't think of that" aisle.</p>
+            <ul class="cat__list">
+              <li>Batteries AA, AAA, 9V, button</li>
+              <li>Prepaid cards (phone, gaming)</li>
+              <li>Greeting cards</li>
+              <li>Pens, pencils, notebooks</li>
+              <li>Today's newspapers (La Presse, Tribune…)</li>
+              <li>Magazines</li>
+              <li>Loto-Québec lottery tickets</li>
+              <li>Scratch tickets</li>
+              <li>Party items, emergency gifts</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PAYMENT ========== -->
+  <section id="payment">
+    <div class="container">
+      <div class="info-head" data-reveal>
+        <span class="kicker">Section 03</span>
+        <h2 class="h1" style="margin-top:14px;">Payment &amp; rates.</h2>
+      </div>
+
+      <div class="pay-grid" data-reveal>
+        <div class="pay-card">
+          <div class="pay-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+          </div>
+          <h3 class="h3">Card (Square)</h3>
+          <p>Debit, credit, contactless. Apple Pay, Google Pay, watch. The driver arrives with a portable terminal.</p>
+          <ul class="pay-card__list">
+            <li>Visa, Mastercard, AMEX</li>
+            <li>Interac</li>
+            <li>Contactless</li>
+          </ul>
+        </div>
+        <div class="pay-card pay-card--primary">
+          <div class="pay-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+          </div>
+          <h3 class="h3" style="color:#fff;">Cash</h3>
+          <p style="color:rgba(255,255,255,.78);">Cash accepted. Bring reasonable change if possible: the driver doesn't always carry much change.</p>
+          <ul class="pay-card__list" style="color:rgba(255,255,255,.78);">
+            <li style="border-color:rgba(255,255,255,.2);">CAD only</li>
+            <li style="border-color:rgba(255,255,255,.2);">Reasonable change please</li>
+            <li style="border-color:rgba(255,255,255,.2);">Receipt on request</li>
+          </ul>
+        </div>
+        <div class="pay-card">
+          <div class="pay-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/></svg>
+          </div>
+          <h3 class="h3">Tip</h3>
+          <p>Always at your discretion. Never automatically added, never pressured. Appreciated if you find the service worth it.</p>
+          <ul class="pay-card__list">
+            <li>Optional only</li>
+            <li>Never expected</li>
+            <li>Card or cash</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pay-summary" data-reveal>
+        <div class="pay-summary__title">
+          <span class="kicker">Total breakdown</span>
+          <h3 class="h2" style="margin-top:14px;">Three lines,<br/>not one more.</h3>
+        </div>
+        <div class="pay-summary__lines">
+          <div class="pay-summary__line">
+            <div>
+              <strong>Item price</strong>
+              <span>At the store's price.</span>
+            </div>
+            <span class="mono">shelf price</span>
+          </div>
+          <div class="pay-summary__line">
+            <div>
+              <strong>Applicable taxes</strong>
+              <span>GST / QST on taxable items, calculated by the store.</span>
+            </div>
+            <span class="mono">~15%</span>
+          </div>
+          <div class="pay-summary__line">
+            <div>
+              <strong>Distance-based delivery</strong>
+              <span>Simple formula: $8 up to 2 km, then +$1/km. Announced upfront.</span>
+            </div>
+            <span class="mono">$8–$15</span>
+          </div>
+          <div class="pay-summary__line pay-summary__line--total">
+            <div>
+              <strong>Total at the door</strong>
+              <span>Known before we leave. Payable by card or cash.</span>
+            </div>
+            <span class="mono">= total</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AGE ========== -->
+  <section id="age" style="background:var(--grad-ink);color:#fff;">
+    <div class="container">
+      <div class="info-head" data-reveal style="border-bottom-color:rgba(255,255,255,.12);">
+        <span class="kicker" style="color:#8FAFFF;">Section 04</span>
+        <h2 class="h1" style="margin-top:14px;color:#fff;">Age verification.</h2>
+      </div>
+      <div class="age-grid" data-reveal>
+        <div>
+          <p class="lead" style="color:rgba(255,255,255,.78);max-width:48ch;">For any restricted product (alcohol, lottery), Quebec law requires age verification at the time of delivery. We apply a simple rule: <strong style="color:#fff;">no exceptions, no negotiation.</strong></p>
+        </div>
+        <div class="age-list">
+          <div class="age-item">
+            <div class="age-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M5 16c.7-1.3 1.8-2 3-2s2.3.7 3 2"/><path d="M14 9h5M14 13h5"/></svg>
+            </div>
+            <div>
+              <strong>Valid photo ID</strong>
+              <span>Driver's licence, health card with photo, passport, ID card.</span>
+            </div>
+          </div>
+          <div class="age-item">
+            <div class="age-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <div>
+              <strong>Minimum age: 18</strong>
+              <span>For alcohol and lottery. The driver checks the date of birth, not just the photo.</span>
+            </div>
+          </div>
+          <div class="age-item">
+            <div class="age-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.7 2h6.6L22 8.7v6.6L15.3 22H8.7L2 15.3V8.7z"/><path d="M12 8v4M12 16h.01"/></svg>
+            </div>
+            <div>
+              <strong>No ID = no delivery</strong>
+              <span>Of restricted products. Other items are handed over. You only pay for what is delivered.</span>
+            </div>
+          </div>
+          <div class="age-item">
+            <div class="age-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>
+            </div>
+            <div>
+              <strong>Refusal in case of doubt</strong>
+              <span>The driver may refuse delivery if there is reasonable doubt about the customer's age or condition.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ZONES & HOURS ========== -->
+  <section id="zones">
+    <div class="container">
+      <div class="info-head" data-reveal>
+        <span class="kicker">Section 05</span>
+        <h2 class="h1" style="margin-top:14px;">Areas &amp; hours.</h2>
+      </div>
+      <div class="zones-grid" data-reveal>
+        <div class="zones-table">
+          <div class="zones-table__head">
+            <div>Area (example)</div>
+            <div>Distance</div>
+            <div>Delivery</div>
+          </div>
+          <div class="zones-table__row">
+            <div><span class="z-dot" style="background:var(--blue-600)"></span><strong>Sherbrooke</strong><span>Centre · Jacques-Cartier</span></div>
+            <div class="mono">~2 km</div>
+            <div class="mono">$8</div>
+          </div>
+          <div class="zones-table__row">
+            <div><span class="z-dot" style="background:var(--blue-500)"></span><strong>Fleurimont</strong><span>Northeast</span></div>
+            <div class="mono">~5 km</div>
+            <div class="mono">$11</div>
+          </div>
+          <div class="zones-table__row">
+            <div><span class="z-dot" style="background:var(--blue-700)"></span><strong>Rock Forest</strong><span>Southwest</span></div>
+            <div class="mono">~7 km</div>
+            <div class="mono">$13</div>
+          </div>
+          <div class="zones-table__row">
+            <div><span class="z-dot" style="background:var(--ink)"></span><strong>Saint-Élie-d'Orford</strong><span>West</span></div>
+            <div class="mono">~8 km</div>
+            <div class="mono">$14</div>
+          </div>
+        </div>
+        <div class="hours-card">
+          <div class="kicker">Opening hours</div>
+          <div class="hours-card__today">
+            <span class="pill pill--live"><span class="dot"></span><span data-status>Open</span></span>
+          </div>
+          <div class="hours-card__row">
+            <div>Monday – Saturday</div>
+            <div class="mono">9 AM – 9 PM</div>
+          </div>
+          <div class="hours-card__row">
+            <div>Sunday</div>
+            <div class="mono">10 AM – 5 PM</div>
+          </div>
+          <div class="hours-card__row">
+            <div>Public holidays</div>
+            <div class="mono">Variable · call us</div>
+          </div>
+          <a class="btn btn--primary" href="tel:+18732007377" style="margin-top:20px;justify-content:center;width:100%;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            873 200-7377
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRIVACY ========== -->
+  <section id="privacy" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="info-head" data-reveal>
+        <span class="kicker">Section 06</span>
+        <h2 class="h1" style="margin-top:14px;">Privacy<br/>&amp; terms.</h2>
+      </div>
+      <div class="conf-grid" data-reveal>
+        <article>
+          <h3 class="h3">Personal data</h3>
+          <p>We only collect information necessary for delivery: name, phone number, address, and item list. This data is never sold or shared with third parties, except as required by law.</p>
+        </article>
+        <article>
+          <h3 class="h3">Retention</h3>
+          <p>Email orders are kept for 90 days for customer service and accounting purposes. After that, they are deleted. You can request deletion at any time: <a href="mailto:info@expresslivraison.ca" style="text-decoration:underline;color:var(--primary);">info@expresslivraison.ca</a>.</p>
+        </article>
+        <article>
+          <h3 class="h3">Cookies &amp; analytics</h3>
+          <p>The site only uses strictly necessary cookies for its operation. No advertising tracking, no data resale. Anonymous analytics to measure performance.</p>
+        </article>
+        <article>
+          <h3 class="h3">Payment &amp; security</h3>
+          <p>No payment is made online. All transactions take place at the door via Square (secure terminal) or cash. We do not retain any bank card information.</p>
+        </article>
+        <article>
+          <h3 class="h3">Driver responsibility</h3>
+          <p>The driver may refuse a delivery if they consider the situation poses a risk (apparent intoxication, doubt about age, threatening behaviour). Their safety and legal compliance come first.</p>
+        </article>
+        <article>
+          <h3 class="h3">Modifications &amp; cancellations</h3>
+          <p>You can modify or cancel your order as long as the driver hasn't reached the store. Once items are purchased, cancellation is no longer possible but items can be returned to the store at no cost to you.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section>
+    <div class="container">
+      <div class="info-cta">
+        <div>
+          <div class="kicker">A question still unanswered?</div>
+          <h2 class="h1" style="margin-top:14px;max-width:18ch;">Call. Still the fastest<br/>way.</h2>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a class="btn btn--primary btn--xl" href="tel:+18732007377">873 200-7377</a>
+          <a class="btn btn--xl" href="mailto:info@expresslivraison.ca">Send an email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
