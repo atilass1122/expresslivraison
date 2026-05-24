@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // Note : les redirections SEO des anciennes URL sont gérées par
 // `public/_redirects` (vrais 301 côté serveur sur Cloudflare Pages).
 // On NE les met PAS ici : Astro générerait des pages HTML « meta-refresh »
@@ -36,6 +38,7 @@ for (const [fr, en] of PAIRS) {
 export default defineConfig({
   site: SITE,
   trailingSlash: 'never',
+
   i18n: {
     defaultLocale: 'fr',
     locales: ['fr', 'en'],
@@ -43,6 +46,7 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
+
   integrations: [
     sitemap({
       // Priorité et fréquence — signaux faibles, mais inoffensifs.
@@ -60,8 +64,11 @@ export default defineConfig({
       },
     }),
   ],
+
   build: {
     inlineStylesheets: 'auto',
   },
+
   compressHTML: true,
+  adapter: cloudflare(),
 });
