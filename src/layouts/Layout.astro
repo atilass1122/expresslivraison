@@ -342,10 +342,6 @@ const jsI18n = {
         };
         const W3F_ENDPOINT = 'https://api.web3forms.com/submit';
 
-        // hCaptcha — clé par défaut fournie par Web3Forms sur les plans gratuits.
-        // Pour utiliser ta propre clé : créer un compte sur hcaptcha.com et remplacer.
-        const HCAPTCHA_SITE_KEY = '50b2fe65-b00b-4b9e-ad62-3ba471098be2';
-
         // Honeypot anti-spam : champ caché que les bots remplissent souvent.
         // Web3Forms ignore les envois où `botcheck` est non vide.
         function ensureHoneypot(form) {
@@ -396,10 +392,6 @@ const jsI18n = {
               }
               form.reset();
               if (submitBtn) submitBtn.innerHTML = originalBtnText;
-              // Réinitialiser le widget hCaptcha pour qu'un nouvel envoi soit possible.
-              if (window.hcaptcha && typeof window.hcaptcha.reset === 'function') {
-                try { window.hcaptcha.reset(); } catch (e) { /* noop */ }
-              }
               // Garder le bouton désactivé brièvement pour éviter les doubles envois.
               setTimeout(() => { if (submitBtn) submitBtn.disabled = false; }, 1500);
               return true;
@@ -418,45 +410,10 @@ const jsI18n = {
           }
         }
 
-        // Injecter le honeypot + le widget hCaptcha dans tous les formulaires gérés.
+        // Anti-spam : seulement un honeypot silencieux (aucune friction utilisateur).
+        // Web3Forms rejette automatiquement tout envoi où `botcheck` est rempli.
         const managedForms = document.querySelectorAll('[data-form="order"], [data-form="quote"], [data-form="contact"]');
-        managedForms.forEach((form) => {
-          ensureHoneypot(form);
-          // hCaptcha : widget visible inséré juste avant le bloc submit.
-          if (!form.querySelector('.h-captcha')) {
-            const submitWrap = form.querySelector('.order-form__submit, .quote-form__submit, .contact-form__submit');
-            const cap = document.createElement('div');
-            cap.className = 'h-captcha form-captcha';
-            cap.setAttribute('data-sitekey', HCAPTCHA_SITE_KEY);
-            if (submitWrap && submitWrap.parentNode) {
-              submitWrap.parentNode.insertBefore(cap, submitWrap);
-            } else {
-              form.appendChild(cap);
-            }
-          }
-        });
-        // Charger l'API hCaptcha une seule fois, si la page contient au moins un formulaire.
-        if (managedForms.length && !document.querySelector('script[data-hcaptcha-api]')) {
-          const s = document.createElement('script');
-          s.src = 'https://js.hcaptcha.com/1/api.js';
-          s.async = true;
-          s.defer = true;
-          s.setAttribute('data-hcaptcha-api', '');
-          document.head.appendChild(s);
-        }
-
-        // Vérifie que l'utilisateur a complété le captcha avant l'envoi.
-        function checkCaptcha(form) {
-          const tokenInput = form.querySelector('[name="h-captcha-response"]');
-          const token = tokenInput && tokenInput.value && tokenInput.value.trim();
-          if (token) return true;
-          const status = form.querySelector('[data-form-status]');
-          if (status) {
-            status.textContent = I18N.formCaptchaRequired;
-            status.className = 'form-status form-status--err';
-          }
-          return false;
-        }
+        managedForms.forEach((form) => ensureHoneypot(form));
 
         // ---------- order form ----------
         document.querySelectorAll('[data-form="order"]').forEach((form) => {
@@ -505,7 +462,6 @@ const jsI18n = {
               }
               return;
             }
-            if (!checkCaptcha(form)) return;
 
             const fd = new FormData(form);
             const body =
@@ -540,7 +496,6 @@ const jsI18n = {
               if (status) { status.textContent = I18N.formFillRequired; status.className = 'form-status form-status--err'; }
               return;
             }
-            if (!checkCaptcha(form)) return;
             const fd = new FormData(form);
             const body =
               I18N.emailQuoteTitle + '\n' +
@@ -571,7 +526,6 @@ const jsI18n = {
               if (status) { status.textContent = I18N.formFillRequired; status.className = 'form-status form-status--err'; }
               return;
             }
-            if (!checkCaptcha(form)) return;
             const fd = new FormData(form);
             const body =
               I18N.emailContactTitle + '\n' +
