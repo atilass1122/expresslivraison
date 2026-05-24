@@ -73,8 +73,8 @@ export const ui = {
     footerPrivacyLink: 'Politique de confidentialité',
 
     // Statut ouvert / fermé (JS)
-    statusOpenFmt: 'Ouvert · ferme à {h} h',
-    statusClosedFmt: 'Fermé · ouvre à {h} h',
+    statusOpenFmt: 'Ouvert · ferme à {h}',
+    statusClosedFmt: 'Fermé · ouvre à {h}',
 
     // Validation formulaires (JS)
     formRequired: 'Champ requis',
